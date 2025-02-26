@@ -2,11 +2,12 @@ import React from "react";
 import { Container } from "./common/Container";
 import { Button } from "./ui/button";
 import { MessageCircle, PlayIcon } from "lucide-react";
-import placeholderImage from "@/public/images/placeholder-image.png";
 import Image from "next/image";
+import phoneImage from "@/public/images/phone-image.png";
+
 export default function Hero() {
   return (
-    <Container className='lg:h-[85vh] flex items-center'>
+    <Container className='lg:h-[85vh] flex items-center' id=''>
       <div className='grid gap-10 md:gap-5 lg:gap-0 md:grid-cols-2 items-center'>
         <div className='space-y-5 lg:space-y-8'>
           <div className='flex items-center gap-1 text-primary-color'>
@@ -33,13 +34,17 @@ export default function Hero() {
           </div>
         </div>
         <div className='relative'>
-          <Image src={placeholderImage} alt='placeholder' className='mx-auto' />
-          <div className='lg:block hidden absolute -bottom-10 left-0 bg-black border border-primary-color pt-20 pb-8 px-5 w-72 rounded-xl text-3xl font-bold'>
+          <Image
+            src={phoneImage}
+            alt='placeholder'
+            className='mx-auto w-full'
+          />
+          {/* <div className='lg:block hidden absolute -bottom-10 left-0 bg-black border border-primary-color pt-20 pb-8 px-5 w-72 rounded-xl text-3xl font-bold'>
             <p>SMART.</p>
             <p>OPTIMIZED.</p>
             <p>FUNCTIONAL.</p>
             <p>INTELLIGENCE.</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </Container>

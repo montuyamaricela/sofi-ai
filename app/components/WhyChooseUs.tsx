@@ -4,7 +4,7 @@ import { whyChooseUs } from "../data";
 
 export default function WhyChooseUs() {
   return (
-    <Container className='bg-primary-color'>
+    <Container className='bg-primary-color' id='why-choose-us'>
       <div className=''>
         <p className='text-white tracking-widest uppercase text-center'>
           Why Choose Us?

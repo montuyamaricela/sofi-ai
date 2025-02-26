@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import { Star } from "lucide-react";
 export default function About() {
   return (
-    <Container>
+    <Container id='about'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-10 items-center'>
         <div className='relative'>
           <Image src={aboutImage} alt='placeholder' className='mx-auto' />

@@ -43,9 +43,9 @@ export default function NavigationBar() {
       }`}
     >
       <div className='flex justify-between items-center container mx-auto py-6 font-poppins'>
-        <div className='flex items-center'>
+        <Link href='/' className='flex items-center'>
           <Image src={logo} alt='logo' className='w-28' />
-        </div>
+        </Link>
 
         <div
           className={`hidden lg:flex gap-5 uppercase bg-secondary-gray border transition-colors duration-500 border-secondary-lightGray px-10 py-4 rounded-lg ${

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import NavigationBar from "./components/common/NavigationBar";
+import Main from "./components/common/Main";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -25,8 +25,7 @@ export default function RootLayout({
         className={`${poppins.variable} antialiased bg-black text-white`}
         style={{ fontFamily: "var(--font-poppins), Arial, sans-serif" }}
       >
-        <NavigationBar />
-        {children}
+        <Main>{children}</Main>
       </body>
     </html>
   );

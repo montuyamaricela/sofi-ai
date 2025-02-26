@@ -3,7 +3,7 @@ import { Container } from "./common/Container";
 import { features } from "../data";
 export default function Features() {
   return (
-    <Container>
+    <Container id='features'>
       <div>
         <p className='text-primary-color tracking-widest uppercase text-center'>
           Our Service
@@ -18,7 +18,10 @@ export default function Features() {
               <p className='text-primary-color text-2xl font-bold'>
                 {item.title}
               </p>
-              <p className='text-primary-grayText'>{item.description}</p>
+              <div
+                className='mt-5'
+                dangerouslySetInnerHTML={{ __html: item.description }}
+              />
               <div className='mt-5'>
                 <p className='text-primary-grayText/40 font-bold'>{item.id}</p>
               </div>
