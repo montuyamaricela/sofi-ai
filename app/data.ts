@@ -135,7 +135,7 @@ export const testimonials = [
     client: "Pia Ty",
     author: "Reffer",
     testimonial:
-      "Not gonna lie, running a streetwear brand is dope but crazy—so many DMs, so many orders, and keeping up with customers 24/7? Yeah, impossible. But then we got SOFI Ai, and bro, it’s a game-changer. It answers messages instantly, which means no more missed sales, and it’s helped us reach way more people without needing a big team. Sales? Up. Engagement? Up. Stress? Down. If you're trying to scale without burning out, this is it.",
+      "Not gonna lie, running a streetwear brand is dope but crazy—so many DMs, so many orders, and keeping up with customers 24/7? Yeah, impossible. But then we got SOFI Ai, and bro, it's a game-changer. It answers messages instantly, which means no more missed sales, and it's helped us reach way more people without needing a big team. Sales? Up. Engagement? Up. Stress? Down. If you're trying to scale without burning out, this is it.",
     image: "assets/images/logos/streetwear-brand.png",
   },
 ];
@@ -158,5 +158,50 @@ export const howItWorks = [
     title: "Integration & Training",
     description:
       "SOFI AI is connected to your platform, and training is provided on managing AI interactions, adding knowledge, and ensuring smooth operation.",
+  },
+];
+
+export const teamMembers = [
+  {
+    id: 1,
+    name: "Sarah Johnson",
+    position: "Chief Executive Officer",
+    bio: "With over 15 years of experience in AI and machine learning, Sarah leads our vision for revolutionary AI solutions.",
+    image: "/images/placeholder-image.png",
+  },
+  {
+    id: 2,
+    name: "Michael Chen",
+    position: "Chief Technology Officer",
+    bio: "A pioneer in natural language processing, Michael drives our technical innovation and AI development.",
+    image: "/images/placeholder-image.png",
+  },
+  {
+    id: 3,
+    name: "Emma Rodriguez",
+    position: "Head of AI Research",
+    bio: "Emma specializes in developing advanced machine learning algorithms that power our core solutions.",
+    image: "/images/placeholder-image.png",
+  },
+  {
+    id: 4,
+    name: "David Kim",
+    position: "Product Director",
+    bio: "David ensures our AI solutions meet real-world business needs while maintaining user-friendly design.",
+    image: "/images/placeholder-image.png",
+  },
+  {
+    id: 5,
+    name: "Lisa Patel",
+    position: "Customer Success Lead",
+    bio: "Lisa works closely with clients to ensure smooth implementation and optimal results from our AI solutions.",
+    image: "/images/placeholder-image.png",
+  },
+  {
+    id: 6,
+    name: "James Wilson",
+    position: "AI Ethics Officer",
+    bio: "James ensures our AI development adheres to ethical guidelines and responsible AI principles.",
+    image: "/images/placeholder-image.png",
   },
 ];
