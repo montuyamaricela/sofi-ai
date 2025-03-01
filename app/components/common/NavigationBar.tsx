@@ -31,6 +31,7 @@ export default function NavigationBar() {
   }, []);
 
   const handleLinkClick = (href: string) => {
+    console.log(href);
     setActiveLink(href.toLowerCase());
   };
 
@@ -43,7 +44,11 @@ export default function NavigationBar() {
       }`}
     >
       <div className='flex justify-between items-center container mx-auto py-6 font-poppins'>
-        <Link href='/' className='flex items-center'>
+        <Link
+          href='/'
+          onClick={() => setActiveLink("/")}
+          className='flex items-center'
+        >
           <Image src={logo} alt='logo' className='w-28' />
         </Link>
 
@@ -75,9 +80,15 @@ export default function NavigationBar() {
           <Button className='border-primary-color hover:bg-primary-color hover:text-white border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-medium bg-transparent'>
             Try now
           </Button>
-          <Button className='border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
-            Book Now
-          </Button>
+          <Link
+            href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09J3y1Vn26ezSqOVH8zuujqHnA43Ks41SmISgRGjFvTo3TqiMezwT0hrp2FpF3uX8OSdxGVHhQ'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Button className='border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
+              Book Now
+            </Button>
+          </Link>
         </div>
 
         <div className='lg:hidden'>

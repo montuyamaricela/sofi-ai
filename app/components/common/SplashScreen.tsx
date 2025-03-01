@@ -17,8 +17,8 @@ export default function SplashScreen({
       setIsFading(true);
       setTimeout(() => {
         finishLoading();
-      }, 800);
-    }, 3000);
+      }, 350);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 

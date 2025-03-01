@@ -3,6 +3,7 @@ import { Container } from "./common/Container";
 import aboutImage from "@/public/images/about-image.png";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import Link from "next/link";
 import { Star } from "lucide-react";
 export default function About() {
   return (
@@ -32,9 +33,11 @@ export default function About() {
             operations.
           </p>
           <div className='mt-5 lg:mt-10 flex flex-col lg:flex-row items-start lg:items-center gap-5'>
-            <Button className='border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-7 rounded-sm uppercase font-bold bg-primary-color'>
-              Know More
-            </Button>
+            <Link href='/about'>
+              <Button className='border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-7 rounded-sm uppercase font-bold bg-primary-color'>
+                Know More
+              </Button>
+            </Link>
             <div className='flex items-center gap-2'>
               <p className='text-primary-color font-bold text-4xl lg:text-5xl'>
                 5.0

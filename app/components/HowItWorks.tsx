@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "./common/Container";
 import { howItWorks } from "../data";
+import Link from "next/link";
 
 export default function HowItWorks() {
   return (
@@ -22,9 +23,15 @@ export default function HowItWorks() {
             <span className='text-primary-color'>typically operate</span> in
             <br />a three steps
           </h2>
-          <button className='mt-8 border border-primary-color text-white px-8 py-3 rounded hover:bg-primary-color hover:text-white transition-colors duration-300'>
-            BOOK NOW
-          </button>
+          <Link
+            href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09J3y1Vn26ezSqOVH8zuujqHnA43Ks41SmISgRGjFvTo3TqiMezwT0hrp2FpF3uX8OSdxGVHhQ'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <button className='mt-8 border border-primary-color text-white px-8 py-3 rounded hover:bg-primary-color hover:text-white transition-colors duration-300'>
+              SCHEDULE A CALL
+            </button>
+          </Link>
         </div>
 
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-8'>

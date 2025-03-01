@@ -1,0 +1,63 @@
+import { Container } from "./common/Container";
+import { faqs } from "../data";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/app/components/ui/accordion";
+import { Button } from "./ui/button";
+
+export default function FAQs() {
+  return (
+    <Container
+      className='bg-gradient-to-br from-gray-950 via-black to-gray-950'
+      id='faqs'
+    >
+      <div className='max-w-7xl mx-auto relative z-10'>
+        <div className='absolute inset-0 -z-10'>
+          <div className='absolute top-20 left-10 w-96 h-96 bg-primary-color/20 rounded-full blur-[120px]'></div>
+          <div className='absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px]'></div>
+        </div>
+
+        <div className='grid lg:grid-cols-2 gap-10 lg:gap-0'>
+          <div>
+            <p className='text-primary-color uppercase tracking-widest'>FAQS</p>
+            <h2 className='text-white text-4xl lg:text-6xl font-bold mt-4'>
+              Frequently asked{" "}
+              <span className='text-primary-color'>questions</span>
+            </h2>
+            {/* <p className='text-gray-400 mt-6'>
+              Find answers to the most common questions about SOFI AI. From
+              setup to customization and benefits, this section covers
+              everything you need to know about how SOFI AI can enhance your
+              business.
+            </p> */}
+            <Button className='mt-5 border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
+              Contact Now
+            </Button>
+          </div>
+
+          <div>
+            <Accordion type='single' collapsible className='space-y-4'>
+              {faqs.map((faq) => (
+                <AccordionItem
+                  key={faq.id}
+                  value={`item-${faq.id}`}
+                  className='bg-[#1A1A1A] rounded-lg border-none data-[state=open]:bg-[#1A1A1A]'
+                >
+                  <AccordionTrigger className='text-white font-semibold p-7 text-base md:text-lg [&[data-state=open]>svg]:rotate-180 hover:no-underline'>
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className='text-gray-400 mx-6 border-t border-gray-700 pt-5 text-base'>
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </div>
+    </Container>
+  );
+}

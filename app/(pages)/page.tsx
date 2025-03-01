@@ -5,6 +5,7 @@ import WhyChooseUs from "@/app/components/WhyChooseUs";
 import Features from "@/app/components/Features";
 import Testimonials from "@/app/components/Testimonials";
 import HowItWorks from "@/app/components/HowItWorks";
+import FAQs from "@/app/components/FAQs";
 export default function Home() {
   return (
     <>
@@ -15,6 +16,7 @@ export default function Home() {
       <Features />
       <Testimonials />
       <HowItWorks />
+      <FAQs />
     </>
   );
 }
