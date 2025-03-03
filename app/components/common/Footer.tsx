@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from ".././common/Container";
 import { socialLinks, legalLinks } from "@/app/data";
-import logo from "@/public/logo/logo-with-name.png";
+import logo from "@/public/images/logo/logo-with-name.png";
 export default function Footer() {
   return (
     <footer className='bg-secondary-lightGray'>
@@ -14,7 +14,7 @@ export default function Footer() {
             <Link href='/' className='w-fit'>
               <Image src={logo} alt='SOFI AI Logo' className='h-20 w-auto' />
             </Link>
-            <p className='mt-3 w-2/4 text-white/60'>
+            <p className='mt-3 md:w-2/4 text-white/60'>
               Empowering businesses with AI-driven solutions to enhance
               efficiency, streamline operations, and revolutionize customer
               interactions. Experience the future of intelligent automation with

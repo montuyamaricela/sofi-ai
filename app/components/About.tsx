@@ -27,7 +27,7 @@ export default function About() {
             </span>
             through{" "}
             <span className='text-primary-color'>intelligent automation.</span>{" "}
-            Our mission is to empower businesses with
+            Our mission is to empower businesses with{" "}
             <span className='text-primary-color'>AI-driven solutions</span> that
             enhance efficiency, improve user experience, and streamline
             operations.

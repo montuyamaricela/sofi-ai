@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import logo from "@/public/logo/logo-with-name.png";
+import logo from "@/public/images/logo/logo-with-name.png";
 import Link from "next/link";
 import { navigationItems } from "@/app/data";
 import { Button } from "../ui/button";
@@ -37,7 +37,7 @@ export default function NavigationBar() {
 
   return (
     <div
-      className={`sticky top-0 z-40 transition-colors duration-500 px-5 ${
+      className={`sticky top-0 z-50 transition-colors duration-500 px-5 ${
         isScrolled
           ? "bg-secondary-grayBg border-4 border-secondary-lightGray"
           : "bg-black border-4 border-transparent"

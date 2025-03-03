@@ -6,6 +6,8 @@ import Features from "@/app/components/Features";
 import Testimonials from "@/app/components/Testimonials";
 import HowItWorks from "@/app/components/HowItWorks";
 import FAQs from "@/app/components/FAQs";
+import CallToAction from "@/app/components/CallToAction";
+import Integration from "@/app/components/Integration";
 export default function Home() {
   return (
     <>
@@ -14,9 +16,11 @@ export default function Home() {
       <About />
       <WhyChooseUs />
       <Features />
-      <Testimonials />
       <HowItWorks />
+      <Integration />
+      <Testimonials />
       <FAQs />
+      <CallToAction />
     </>
   );
 }

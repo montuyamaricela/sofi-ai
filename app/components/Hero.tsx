@@ -1,18 +1,76 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+"use client";
 import { Container } from "./common/Container";
 import { Button } from "./ui/button";
-import { MessageCircle, PlayIcon } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import Image from "next/image";
 import phoneImage from "@/public/images/phone-image.png";
+import { TypewriterEffect } from "./ui/typewriter";
+import React, { useState, useEffect } from "react";
 
 export default function Hero() {
+  const greetings = [
+    {
+      text: "Hello Sissy!",
+      className: "text-primary-color",
+    },
+    {
+      text: "Maayong adlaw! Kumusta?",
+      className: "text-primary-color",
+    },
+    {
+      text: "안녕하세요! 잘 지내세요?",
+      className: "text-primary-color",
+    },
+    {
+      text: "こんにちは！お元気ですか？",
+      className: "text-primary-color",
+    },
+    {
+      text: "Bonjour ! Comment ça va",
+      className: "text-primary-color",
+    },
+    {
+      text: "Eowww p0whzz! mUsTah kNah? 😜",
+      className: "text-primary-color",
+    },
+  ];
+
+  const [currentGreetingIndex, setCurrentGreetingIndex] = useState(0);
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    // Calculate total animation duration based on text length
+    const getAnimationDuration = (text: string) => {
+      // Base duration of 1.5 seconds + 100ms per character
+      return 1500 + text.length * 100;
+    };
+
+    const rotateGreetings = () => {
+      const currentText = greetings[currentGreetingIndex].text;
+      const duration = getAnimationDuration(currentText);
+
+      const timeout = setTimeout(() => {
+        setCurrentGreetingIndex((prev) => (prev + 1) % greetings.length);
+        setKey((prev) => prev + 1);
+      }, duration);
+
+      return () => clearTimeout(timeout);
+    };
+
+    return rotateGreetings();
+  }, [currentGreetingIndex, greetings]);
+
   return (
-    <Container className='lg:h-[85vh] flex items-center' id=''>
+    <Container className='flex items-center' id=''>
       <div className='grid gap-10 md:gap-5 lg:gap-0 md:grid-cols-2 items-center'>
         <div className='space-y-5 lg:space-y-8'>
           <div className='flex items-center gap-1 text-primary-color'>
-            <MessageCircle className='w-6 h-6' fill='currentColor' />
-            <p className='text-lg'>Hey Sissy! </p>
+            <MessageCircle className='w-8 h-8' fill='currentColor' />
+            <TypewriterEffect
+              key={key}
+              words={[greetings[currentGreetingIndex]]}
+            />
           </div>
           <h1 className='text-4xl lg:text-6xl font-bold'>
             Unlock the{" "}
@@ -28,23 +86,14 @@ export default function Hero() {
             <Button className='border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
               Book Now
             </Button>
-            <Button className='border-transparent h-10 w-10 hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base p-6 rounded-full uppercase font-bold bg-primary-color'>
-              <PlayIcon fill='currentColor' />
-            </Button>
           </div>
         </div>
         <div className='relative'>
           <Image
             src={phoneImage}
-            alt='placeholder'
-            className='mx-auto w-full'
+            alt='phone image'
+            className='mx-auto sm:w-3/4'
           />
-          {/* <div className='lg:block hidden absolute -bottom-10 left-0 bg-black border border-primary-color pt-20 pb-8 px-5 w-72 rounded-xl text-3xl font-bold'>
-            <p>SMART.</p>
-            <p>OPTIMIZED.</p>
-            <p>FUNCTIONAL.</p>
-            <p>INTELLIGENCE.</p>
-          </div> */}
         </div>
       </div>
     </Container>

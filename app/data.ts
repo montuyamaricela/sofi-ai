@@ -1,3 +1,23 @@
+import bigZLogo from "@/public/images/logo/testimonial/bigz.jpg";
+import bailiwickLogo from "@/public/images/logo/testimonial/bailwick.jpg";
+import kippapLogo from "@/public/images/logo/testimonial/kippap.jpg";
+import pawsToHeavenLogo from "@/public/images/logo/testimonial/pawsToHeaven.jpg";
+import refferLogo from "@/public/images/logo/testimonial/reffer.jpg";
+
+import facebook from "@/public/images/logo/integrations/facebook.png";
+import instagram from "@/public/images/logo/integrations/instagram.png";
+import gmail from "@/public/images/logo/integrations/gmail.png";
+import googleCalendar from "@/public/images/logo/integrations/googlecalendar.png";
+import messenger from "@/public/images/logo/integrations/messenger.png";
+import meta from "@/public/images/logo/integrations/meta.png";
+import mysql from "@/public/images/logo/integrations/mysql.png";
+import openai from "@/public/images/logo/integrations/openai.png";
+import shopify from "@/public/images/logo/integrations/shopify.png";
+import telegram from "@/public/images/logo/integrations/telegram.png";
+import pancake from "@/public/images/logo/integrations/12.png";
+import xendit from "@/public/images/logo/integrations/8.png";
+import paymongo from "@/public/images/logo/integrations/9.png";
+
 export const navigationItems = [
   {
     label: "Home",
@@ -28,15 +48,18 @@ export const navigationItems = [
 export const whyChooseUs = [
   {
     id: 1,
-    description: "provides 24/7 real-time support to your customers",
+    description:
+      "<p>Provides <span class='text-primary-color'>24/7 real-time support </span>to your customers</p>",
   },
   {
     id: 2,
-    description: "Adapts to your brand's tone and personality",
+    description:
+      "<p>Adapts to your brand's <span class='text-primary-color'>tone and personality</span></p>",
   },
   {
     id: 3,
-    description: "Seamless integrate with other platforms and business tools",
+    description:
+      "<p><span class='text-primary-color'>Seamless integrate</span> with other platforms and business tools</p>",
   },
 ];
 
@@ -44,56 +67,52 @@ export const features = [
   {
     id: "01",
     title: "24/7 AI Chat Support",
-    description:
-      "<p>Always available to <span class='text-primary-color'>Always available to provide real-time customer assistance</span>.</p>",
+    description: "Always available to provide real-time customer assistance.",
   },
   {
     id: "02",
     title: "Unlimited Replies",
     description:
-      "<p>No restrictions on the number of messages, <span class='text-primary-color'>ensuring smooth and continuous interactions</span>.</p>",
+      "No restrictions on the number of messages, ensuring smooth and continuous interactions.",
   },
   {
     id: "03",
     title: "Multilingual Capabilities",
     description:
-      "<p>Communicate with customers in <span class='text-primary-color'>multiple languages for global expansion</span>.</p>",
+      "Communicate with customers in multiple languages for global expansion.",
   },
   {
     id: "04",
     title: "Voice AI Integration",
     description:
-      "<p>Enable hands-free interactions with <span class='text-primary-color'>advanced and seamless voice support</span>.</p>",
+      "Enable hands-free interactions with advanced and seamless voice support.",
   },
   {
     id: "05",
     title: "Broadcast",
-    description:
-      "<p>Send broadcast messages for <span class='text-primary-color'>subscribed customers</span>.</p>",
+    description: "Send broadcast messages for subscribed customers.",
   },
   {
     id: "06",
     title: "Comment Replies",
-    description:
-      "<p>Reply to comment sections, and initiate <span class='text-primary-color'>private messages</span>.</p>",
+    description: "Reply to comment sections, and initiate private messages.",
   },
   {
     id: "07",
     title: "Automated Data Collection",
     description:
-      "<p>Gather business insights with <span class='text-primary-color'>smart AI-driven data automation</span>.</p>",
+      "Gather business insights with smart AI-driven data automation.",
   },
   {
     id: "08",
     title: "AI-Powered Booking System",
     description:
-      "<p>Automate scheduling with <span class='text-primary-color'>seamless and efficient reservations</span>.</p>",
+      "Automate scheduling with seamless and efficient reservations.",
   },
   {
     id: "09",
     title: "Smart Sales Assistance",
-    description:
-      "<p>Boost conversions with <span class='text-primary-color'>real-time product recommendations</span>.</p>",
+    description: "Boost conversions with real-time product recommendations.",
   },
 ];
 
@@ -104,7 +123,7 @@ export const testimonials = [
     author: "Grace B. Parazo",
     testimonial:
       "SOFI has been a game-changer for our business, especially during peak hours and off-hours when immediate responses are needed. The learning curve is surprisingly manageable - it's all about providing the right information upfront. What amazes me is how it sometimes gives spot-on answers even for things we haven't explicitly covered! The best part? It captures our brand voice perfectly, making it sound authentically 'me' when responding. It's reliable enough that I can confidently leave it to handle interactions. Plus, knowing that there's always a supportive team ready to help with any questions or concerns makes the experience even better. It's truly been an invaluable addition to our business operations.",
-    image: "assets/images/logos/bailiwick-academy.png",
+    image: bailiwickLogo,
   },
   {
     id: 2,
@@ -112,7 +131,7 @@ export const testimonials = [
     author: "Victor Joseph Villafuerte",
     testimonial:
       "Sofi AI has become one of the must-haves for our business, especially during the holidays. We get hundreds of inquiries every day pero I still get to enjoy the Christmas break worry-free because Sofi AI can answer most questions and even convert inquiries into customers.",
-    image: "assets/images/logos/kippap-civil-engineering.png",
+    image: kippapLogo,
   },
   {
     id: 3,
@@ -120,7 +139,7 @@ export const testimonials = [
     author: "BigZ Burger",
     testimonial:
       "Using it [SOFI AI], we save time, benefit from efficient data organization, and experience significant growth in client acquisition.",
-    image: "assets/images/logos/bigz-burger.png",
+    image: bigZLogo,
   },
   {
     id: 4,
@@ -128,7 +147,7 @@ export const testimonials = [
     author: "Paws to Heaven",
     testimonial:
       "SOFI Ai is my little business fairy! It answers messages 24/7, helps me book more stays, and makes sure my biz is always growing and thriving. In just 6 months, I went from 1 to 10 units—like, what?!  Small team, big wins, all thanks to SOFI Ai! If you wanna glow up your business, this is the secret sauce.",
-    image: "assets/images/logos/staycation-haven.png",
+    image: pawsToHeavenLogo,
   },
   {
     id: 5,
@@ -136,7 +155,7 @@ export const testimonials = [
     author: "Reffer",
     testimonial:
       "Not gonna lie, running a streetwear brand is dope but crazy—so many DMs, so many orders, and keeping up with customers 24/7? Yeah, impossible. But then we got SOFI Ai, and bro, it's a game-changer. It answers messages instantly, which means no more missed sales, and it's helped us reach way more people without needing a big team. Sales? Up. Engagement? Up. Stress? Down. If you're trying to scale without burning out, this is it.",
-    image: "assets/images/logos/streetwear-brand.png",
+    image: refferLogo,
   },
 ];
 
@@ -151,7 +170,7 @@ export const howItWorks = [
     step: 2,
     title: "Testing & Refinement",
     description:
-      "SOFI AI undergoes an initial testing phase to verify brand alignment, refine response tone, and ensure seamless information flow. Adjustments are made to optimize accuracy and effectiveness.",
+      "SOFI AI undergoes an initial testing phase to verify brand alignment, refine response tone, and ensure seamless information flow.",
   },
   {
     step: 3,
@@ -161,48 +180,71 @@ export const howItWorks = [
   },
 ];
 
-export const teamMembers = [
+export const integrations = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    position: "Chief Executive Officer",
-    bio: "With over 15 years of experience in AI and machine learning, Sarah leads our vision for revolutionary AI solutions.",
-    image: "/images/placeholder-image.png",
+    image: facebook,
+    name: "Facebook",
   },
   {
     id: 2,
-    name: "Michael Chen",
-    position: "Chief Technology Officer",
-    bio: "A pioneer in natural language processing, Michael drives our technical innovation and AI development.",
-    image: "/images/placeholder-image.png",
+    image: instagram,
+    name: "Instagram",
   },
   {
     id: 3,
-    name: "Emma Rodriguez",
-    position: "Head of AI Research",
-    bio: "Emma specializes in developing advanced machine learning algorithms that power our core solutions.",
-    image: "/images/placeholder-image.png",
+    image: gmail,
+    name: "Gmail",
   },
   {
     id: 4,
-    name: "David Kim",
-    position: "Product Director",
-    bio: "David ensures our AI solutions meet real-world business needs while maintaining user-friendly design.",
-    image: "/images/placeholder-image.png",
+    image: googleCalendar,
+    name: "Google Calendar",
   },
   {
     id: 5,
-    name: "Lisa Patel",
-    position: "Customer Success Lead",
-    bio: "Lisa works closely with clients to ensure smooth implementation and optimal results from our AI solutions.",
-    image: "/images/placeholder-image.png",
+    image: messenger,
+    name: "Messenger",
   },
   {
     id: 6,
-    name: "James Wilson",
-    position: "AI Ethics Officer",
-    bio: "James ensures our AI development adheres to ethical guidelines and responsible AI principles.",
-    image: "/images/placeholder-image.png",
+    image: meta,
+    name: "Meta",
+  },
+  {
+    id: 7,
+    image: mysql,
+    name: "MySQL",
+  },
+  {
+    id: 8,
+    image: openai,
+    name: "OpenAI",
+  },
+  {
+    id: 9,
+    image: shopify,
+    name: "Shopify",
+  },
+  {
+    id: 10,
+    image: telegram,
+    name: "Telegram",
+  },
+  {
+    id: 11,
+    image: pancake,
+    name: "Pancake API",
+  },
+  {
+    id: 12,
+    image: xendit,
+    name: "Xendit",
+  },
+  {
+    id: 13,
+    image: paymongo,
+    name: "Pay mongo",
   },
 ];
 
@@ -282,5 +324,35 @@ export const legalLinks = [
   {
     name: "Privacy Policy",
     href: "/privacy-policy",
+  },
+];
+
+export const achievements = [
+  { number: "98%", label: "Customer Satisfaction" },
+  { number: "24/7", label: "Support Available" },
+  { number: "500+", label: "Businesses Empowered" },
+  { number: "15+", label: "Countries Reached" },
+];
+
+export const values = [
+  {
+    title: "Innovation First",
+    description:
+      "Constantly pushing the boundaries of AI technology to deliver cutting-edge solutions.",
+  },
+  {
+    title: "Customer Success",
+    description:
+      "Your growth and success are our top priorities, driving every decision we make.",
+  },
+  {
+    title: "Ethical AI",
+    description:
+      "Committed to responsible AI development with transparency and privacy at its core.",
+  },
+  {
+    title: "Global Impact",
+    description:
+      "Making AI accessible to businesses worldwide, breaking down language and cultural barriers.",
   },
 ];

@@ -9,8 +9,7 @@ export default function Features() {
           Our Service
         </p>
         <h2 className='lg:text-5xl text-3xl font-bold mt-2 mb-5 lg:mb-10 text-center'>
-          Experience our <br />{" "}
-          <span className='text-primary-color'>features</span>
+          Experience our <span className='text-primary-color'>features</span>
         </h2>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto b'>
           {features.map((item) => (

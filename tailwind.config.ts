@@ -68,6 +68,11 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
         fadeIn: {
           "0%": {
             opacity: "0",
@@ -92,11 +97,22 @@ export default {
             height: "0",
           },
         },
+        "spin-clockwise": {
+          from: {
+            transform: "rotate(0deg)",
+          },
+          to: {
+            transform: "rotate(360deg)",
+          },
+        },
       },
       animation: {
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         fadeIn: "fadeIn 0.1s ease-in-out forwards",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "spin-slow": "spin-clockwise 10s linear infinite",
       },
     },
   },

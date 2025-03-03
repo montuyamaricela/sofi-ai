@@ -10,6 +10,7 @@ import { testimonials } from "@/app/data";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 export default function Testimonials() {
   return (
@@ -96,15 +97,15 @@ export default function Testimonials() {
 
                 <p className='text-gray-300 mb-6 text-lg'>{item.testimonial}</p>
 
-                <div className='flex items-center gap-4 mt-auto'>
+                <div className='flex items-center gap-3 mt-auto'>
                   <div className='flex-shrink-0'>
-                    {/* <Image
+                    <Image
                       src={item.image}
                       alt={item.client}
                       width={50}
                       height={50}
                       className='rounded-full'
-                    /> */}
+                    />
                   </div>
                   <div>
                     <h4 className='font-semibold text-white'>{item.author}</h4>

@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import svgLogo from "@/public/logo/vector-logo.png";
+import svgLogo from "@/public/images/logo/vector-logo.png";
 import { useEffect, useState } from "react";
 
 export default function SplashScreen({

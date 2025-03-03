@@ -22,17 +22,10 @@ export default function FAQs() {
 
         <div className='grid lg:grid-cols-2 gap-10 lg:gap-0'>
           <div>
-            <p className='text-primary-color uppercase tracking-widest'>FAQS</p>
-            <h2 className='text-white text-4xl lg:text-6xl font-bold mt-4'>
+            <h2 className='text-white text-4xl lg:text-6xl font-bold my-4'>
               Frequently asked{" "}
               <span className='text-primary-color'>questions</span>
             </h2>
-            {/* <p className='text-gray-400 mt-6'>
-              Find answers to the most common questions about SOFI AI. From
-              setup to customization and benefits, this section covers
-              everything you need to know about how SOFI AI can enhance your
-              business.
-            </p> */}
             <Button className='mt-5 border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
               Contact Now
             </Button>

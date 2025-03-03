@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function HowItWorks() {
   return (
     <Container
+      id='solutions'
       className='bg-gradient-to-br from-gray-950 via-black to-gray-950'
-      id='how-it-works'
     >
       <div className='max-w-7xl mx-auto relative z-10'>
         <div className='absolute inset-0 -z-10'>
