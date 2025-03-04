@@ -6,7 +6,20 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import { integrations } from "../data";
 import logo from "@/public/images/logo/logo-white.png";
 import Image from "next/image";
+
 export default function Integration() {
+  // Randomize integrations using Fisher-Yates shuffle algorithm
+  const randomizeArray = (array: typeof integrations) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  const randomizedIntegrations = randomizeArray(integrations);
+
   return (
     <Container id='integrations'>
       <div className='text-center mb-5 lg:mb-10 overflow-hidden'>
@@ -23,12 +36,12 @@ export default function Integration() {
           <Image src={logo} alt='logo' className='w-14 lg:w-28 h-14 lg:h-28 ' />
         </div>
         <InfiniteMovingCards
-          items={integrations}
+          items={randomizedIntegrations}
           speed='slow'
           direction='left'
         />
         <InfiniteMovingCards
-          items={integrations}
+          items={randomizedIntegrations}
           speed='slow'
           direction='right'
         />

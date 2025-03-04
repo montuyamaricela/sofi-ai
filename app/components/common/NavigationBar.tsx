@@ -7,6 +7,7 @@ import { navigationItems } from "@/app/data";
 import { Button } from "../ui/button";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetTitle,
@@ -110,13 +111,14 @@ export default function NavigationBar() {
                 </Link>
                 <div className='flex flex-col  border-t border-secondary-border'>
                   {navigationItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className='hover:text-primary-color font-medium border-b text-primary-grayText border-secondary-border py-4 px-6 uppercase  '
-                    >
-                      {item.label}
-                    </Link>
+                    <SheetClose asChild key={item.href}>
+                      <Link
+                        href={item.href}
+                        className='hover:text-primary-color font-medium border-b text-primary-grayText border-secondary-border py-4 px-6 uppercase  '
+                      >
+                        {item.label}
+                      </Link>
+                    </SheetClose>
                   ))}
                 </div>
               </div>

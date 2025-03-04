@@ -92,7 +92,7 @@ export default function Hero() {
           <Image
             src={phoneImage}
             alt='phone image'
-            className='mx-auto sm:w-3/4'
+            className='mx-auto w-full xl:w-3/4 '
           />
         </div>
       </div>

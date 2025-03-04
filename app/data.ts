@@ -3,6 +3,7 @@ import bailiwickLogo from "@/public/images/logo/testimonial/bailwick.jpg";
 import kippapLogo from "@/public/images/logo/testimonial/kippap.jpg";
 import pawsToHeavenLogo from "@/public/images/logo/testimonial/pawsToHeaven.jpg";
 import refferLogo from "@/public/images/logo/testimonial/reffer.jpg";
+import staycationHavenLogo from "@/public/images/logo/testimonial/staycationHaven.png";
 
 import facebook from "@/public/images/logo/integrations/facebook.png";
 import instagram from "@/public/images/logo/integrations/instagram.png";
@@ -119,16 +120,16 @@ export const features = [
 export const testimonials = [
   {
     id: 1,
-    client: "The Bailiwick Academy",
-    author: "Grace B. Parazo",
+    client: "Grace B. Parazo",
+    author: "The Bailiwick Academy",
     testimonial:
       "SOFI has been a game-changer for our business, especially during peak hours and off-hours when immediate responses are needed. The learning curve is surprisingly manageable - it's all about providing the right information upfront. What amazes me is how it sometimes gives spot-on answers even for things we haven't explicitly covered! The best part? It captures our brand voice perfectly, making it sound authentically 'me' when responding. It's reliable enough that I can confidently leave it to handle interactions. Plus, knowing that there's always a supportive team ready to help with any questions or concerns makes the experience even better. It's truly been an invaluable addition to our business operations.",
     image: bailiwickLogo,
   },
   {
     id: 2,
-    client: "Kippap Civil Engineering",
-    author: "Victor Joseph Villafuerte",
+    client: "Victor Joseph Villafuerte",
+    author: "Kippap Civil Engineering",
     testimonial:
       "Sofi AI has become one of the must-haves for our business, especially during the holidays. We get hundreds of inquiries every day pero I still get to enjoy the Christmas break worry-free because Sofi AI can answer most questions and even convert inquiries into customers.",
     image: kippapLogo,
@@ -144,13 +145,21 @@ export const testimonials = [
   {
     id: 4,
     client: "Carla Salamat",
-    author: "Paws to Heaven",
+    author: "Staycation Haven",
     testimonial:
       "SOFI Ai is my little business fairy! It answers messages 24/7, helps me book more stays, and makes sure my biz is always growing and thriving. In just 6 months, I went from 1 to 10 units—like, what?!  Small team, big wins, all thanks to SOFI Ai! If you wanna glow up your business, this is the secret sauce.",
-    image: pawsToHeavenLogo,
+    image: staycationHavenLogo,
   },
   {
     id: 5,
+    client: "Paws to heaven",
+    author: "Paws to Heaven",
+    testimonial:
+      "Since implementing Sofi AI, our staff has been able to prioritize the immediate concerns of grieving pet owners  contacting us. This allows us to provide them with the compassion and support they need during this difficult time. Additionally, Sofi Ai has streamlined our ability to respond to inquiries on our Facebook page in a timely manner. This ensures that all our clients receive the prompt attention they deserve. Overall, it made a difference on how we serve our clients",
+    image: pawsToHeavenLogo,
+  },
+  {
+    id: 6,
     client: "Pia Ty",
     author: "Reffer",
     testimonial:
@@ -328,31 +337,8 @@ export const legalLinks = [
 ];
 
 export const achievements = [
-  { number: "98%", label: "Customer Satisfaction" },
-  { number: "24/7", label: "Support Available" },
-  { number: "500+", label: "Businesses Empowered" },
-  { number: "15+", label: "Countries Reached" },
-];
-
-export const values = [
-  {
-    title: "Innovation First",
-    description:
-      "Constantly pushing the boundaries of AI technology to deliver cutting-edge solutions.",
-  },
-  {
-    title: "Customer Success",
-    description:
-      "Your growth and success are our top priorities, driving every decision we make.",
-  },
-  {
-    title: "Ethical AI",
-    description:
-      "Committed to responsible AI development with transparency and privacy at its core.",
-  },
-  {
-    title: "Global Impact",
-    description:
-      "Making AI accessible to businesses worldwide, breaking down language and cultural barriers.",
-  },
+  { number: "100%", label: "Answered clients" },
+  { number: "50+", label: "Languages and Dialects" },
+  { number: "24/7", label: "Chat support" },
+  { number: "1M+", label: "Inquiries Handled" },
 ];

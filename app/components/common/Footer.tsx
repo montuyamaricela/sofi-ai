@@ -12,7 +12,11 @@ export default function Footer() {
 
           <div>
             <Link href='/' className='w-fit'>
-              <Image src={logo} alt='SOFI AI Logo' className='h-20 w-auto' />
+              <Image
+                src={logo}
+                alt='SOFI AI Logo'
+                className='h-14 md:h-20 w-auto'
+              />
             </Link>
             <p className='mt-3 md:w-2/4 text-white/60'>
               Empowering businesses with AI-driven solutions to enhance
