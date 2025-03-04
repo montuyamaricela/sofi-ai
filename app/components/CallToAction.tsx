@@ -14,7 +14,8 @@ export default function CallToAction() {
         </div>
         <div className='flex flex-col items-center justify-center gap-5 relative'>
           <h2 className='text-white text-4xl lg:text-6xl font-bold text-center'>
-            START SMART <span className='text-primary-color'>WITH SOFI</span>
+            START SMART{" "}
+            <span className='text-primary-color'>WITH SOFI test</span>
           </h2>
           <Link
             href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09J3y1Vn26ezSqOVH8zuujqHnA43Ks41SmISgRGjFvTo3TqiMezwT0hrp2FpF3uX8OSdxGVHhQ'
