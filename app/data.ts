@@ -136,7 +136,7 @@ export const testimonials = [
   },
   {
     id: 3,
-    client: "BigZ Burger",
+    client: "Michael Gonzalez",
     author: "BigZ Burger",
     testimonial:
       "Using it [SOFI AI], we save time, benefit from efficient data organization, and experience significant growth in client acquisition.",
@@ -152,7 +152,7 @@ export const testimonials = [
   },
   {
     id: 5,
-    client: "Paws to heaven",
+    client: "Sandra Tan",
     author: "Paws to Heaven",
     testimonial:
       "Since implementing Sofi AI, our staff has been able to prioritize the immediate concerns of grieving pet owners  contacting us. This allows us to provide them with the compassion and support they need during this difficult time. Additionally, Sofi Ai has streamlined our ability to respond to inquiries on our Facebook page in a timely manner. This ensures that all our clients receive the prompt attention they deserve. Overall, it made a difference on how we serve our clients",
@@ -340,5 +340,5 @@ export const achievements = [
   { number: "100%", label: "Answered clients" },
   { number: "50+", label: "Languages and Dialects" },
   { number: "24/7", label: "Chat support" },
-  { number: "1M+", label: "Inquiries Handled" },
+  { number: "1,000,000+", label: "Inquiries Handled" },
 ];

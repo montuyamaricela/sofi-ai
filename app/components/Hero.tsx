@@ -62,7 +62,7 @@ export default function Hero() {
   }, [currentGreetingIndex, greetings]);
 
   return (
-    <Container className='flex items-center' id=''>
+    <Container className='flex items-center xl:h-[90vh] py-0' id=''>
       <div className='grid gap-10 md:gap-5 lg:gap-0 md:grid-cols-2 items-center'>
         <div className='space-y-5 lg:space-y-8'>
           <div className='flex items-center gap-1 text-primary-color'>
@@ -72,7 +72,7 @@ export default function Hero() {
               words={[greetings[currentGreetingIndex]]}
             />
           </div>
-          <h1 className='text-4xl lg:text-6xl font-bold'>
+          <h1 className='text-4xl lg:text-5xl xl:text-6xl font-bold'>
             Unlock the{" "}
             <span className='text-primary-color'>Full Potential</span> of AI for
             Your Brand
@@ -92,7 +92,7 @@ export default function Hero() {
           <Image
             src={phoneImage}
             alt='phone image'
-            className='mx-auto w-full xl:w-3/4 '
+            className='mx-auto xl:w-3/5'
           />
         </div>
       </div>

@@ -50,7 +50,10 @@ export default function Footer() {
           {/* Bottom Section */}
           <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
             <p className='text-gray-400 text-sm'>
-              © 2025 <span className='text-primary-color'>Sofi AI Tech.</span>{" "}
+              © 2025{" "}
+              <span className='text-primary-color'>
+                SOFI AI Tech Solution Inc.
+              </span>{" "}
               All rights reserved.
             </p>
 

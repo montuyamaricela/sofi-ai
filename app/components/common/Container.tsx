@@ -10,8 +10,8 @@ export function Container({
   id?: string;
 }) {
   return (
-    <div id={id} className={`relative ${className}`}>
-      <div className='container m-auto px-8 md:px-5 xl:px-0 text-white flex py-10 lg:py-20 flex-col justify-center items-center'>
+    <div id={id} className={`relative ${className} `}>
+      <div className='container m-auto px-8 md:px-5 text-white flex py-10 lg:py-20 flex-col justify-center items-center'>
         {children}
       </div>
     </div>
