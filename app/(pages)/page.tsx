@@ -8,6 +8,7 @@ import HowItWorks from "@/app/components/HowItWorks";
 import FAQs from "@/app/components/FAQs";
 import CallToAction from "@/app/components/CallToAction";
 import Integration from "@/app/components/Integration";
+import Testimonial from "@/app/components/Testimonial";
 export default function Home() {
   return (
     <>
@@ -19,6 +20,7 @@ export default function Home() {
       <HowItWorks />
       <Integration />
       <Testimonials />
+      <Testimonial />
       <FAQs />
       <CallToAction />
     </>

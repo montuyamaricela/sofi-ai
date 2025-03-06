@@ -62,7 +62,7 @@ export default function Hero() {
   }, [currentGreetingIndex, greetings]);
 
   return (
-    <Container className='flex items-center xl:h-[90vh] py-0' id=''>
+    <Container className='flex items-center lg:h-[85vh]' id='hero'>
       <div className='grid gap-10 md:gap-5 lg:gap-0 md:grid-cols-2 items-center'>
         <div className='space-y-5 lg:space-y-8'>
           <div className='flex items-center gap-1 text-primary-color'>
