@@ -72,7 +72,7 @@ export default function Hero() {
               words={[greetings[currentGreetingIndex]]}
             />
           </div>
-          <h1 className='text-4xl xl:text-6xl font-bold'>
+          <h1 className='text-4xl xl:text-5xl font-bold'>
             Unlock the{" "}
             <span className='text-primary-color'>Full Potential</span> of AI for
             Your Brand
