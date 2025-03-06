@@ -4,8 +4,8 @@ import React from "react";
 import { Container } from "./common/Container";
 import { testimonials } from "../data";
 import TestimonialCard from "./TestimonialCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
