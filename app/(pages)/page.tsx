@@ -3,7 +3,6 @@ import Video from "@/app/components/Video";
 import About from "@/app/components/About";
 import WhyChooseUs from "@/app/components/WhyChooseUs";
 import Features from "@/app/components/Features";
-import Testimonials from "@/app/components/Testimonials";
 import HowItWorks from "@/app/components/HowItWorks";
 import FAQs from "@/app/components/FAQs";
 import CallToAction from "@/app/components/CallToAction";
@@ -19,7 +18,6 @@ export default function Home() {
       <Features />
       <HowItWorks />
       <Integration />
-      {/* <Testimonials /> */}
       <Testimonial />
       <FAQs />
       <CallToAction />
