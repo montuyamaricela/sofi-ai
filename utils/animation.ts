@@ -26,3 +26,26 @@ export const animationVariant = (
     },
   } as Target,
 });
+
+// Add half flip animation (from top to normal)
+export const halfFlipAnimation = (delay?: number): Variants => ({
+  offscreen: {
+    rotateX: 90, // Start at 90 degrees (halfway flipped)
+    opacity: 0,
+    scale: 0.9,
+    transformPerspective: 1000, // Add perspective for better 3D effect
+    transformOrigin: "top", // Flip from top edge
+  } as Target,
+  onscreen: {
+    rotateX: 0, // Return to normal position
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: delay ?? 0.1,
+      type: "spring",
+      bounce: 0.3, // Reduced bounce for more controlled animation
+      duration: 3, // Faster duration for snappier effect
+      ease: "easeOut",
+    },
+  } as Target,
+});

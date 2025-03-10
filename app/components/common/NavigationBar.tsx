@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "@/public/images/logo/logo-with-name.png";
 import Link from "next/link";
@@ -15,8 +15,10 @@ import {
 } from "../ui/sheet";
 import { Menu } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { usePathname } from "next/navigation";
 
 export default function NavigationBar() {
+  const pathname = usePathname();
   const [activeLink, setActiveLink] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -35,6 +37,14 @@ export default function NavigationBar() {
     console.log(href);
     setActiveLink(href.toLowerCase());
   };
+
+  useEffect(() => {
+    if (pathname === "/about") {
+      setActiveLink("/#about");
+    } else {
+      setActiveLink(pathname.toLowerCase());
+    }
+  }, [pathname]);
 
   return (
     <div

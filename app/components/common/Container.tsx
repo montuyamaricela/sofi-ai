@@ -16,7 +16,7 @@ export function Container({
     >
       <div
         className={`container m-auto px-8 md:px-5 text-white flex ${
-          id == "hero" ? "py-10 md:py-0" : "py-10 lg:py-20"
+          id == "hero" ? "py-10 lg:py-0" : "py-10 lg:py-20"
         } flex-col justify-center items-center`}
       >
         {children}

@@ -19,7 +19,7 @@ export default function Home() {
       <Features />
       <HowItWorks />
       <Integration />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Testimonial />
       <FAQs />
       <CallToAction />

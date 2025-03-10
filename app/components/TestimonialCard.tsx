@@ -18,22 +18,39 @@ export default function TestimonialCard({
   image,
 }: Readonly<TestimonialCardProps>) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [shouldShowButton, setShouldShowButton] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
   const contentRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    if (contentRef.current) {
-      setShouldShowButton(contentRef.current.scrollHeight > 150);
-    }
+    const checkOverflow = () => {
+      if (contentRef.current) {
+        // Compare the actual content height with the container height (140px)
+        const hasTextOverflow = contentRef.current.scrollHeight > 140;
+        setHasOverflow(hasTextOverflow);
+      }
+    };
+
+    // Check on mount and when content changes
+    checkOverflow();
+    // Also check after images load and fonts render
+    window.addEventListener("load", checkOverflow);
+    // Check on window resize
+    window.addEventListener("resize", checkOverflow);
+
+    return () => {
+      window.removeEventListener("load", checkOverflow);
+      window.removeEventListener("resize", checkOverflow);
+    };
   }, [testimonial]);
 
   return (
     <div
       className={`bg-white/5 p-6 rounded-lg border border-white/10 hover:border-primary-color/50 transition-all duration-300 ${
-        isExpanded ? "h-auto" : "h-[300px]"
-      } flex flex-col`}
+        isExpanded ? "h-auto" : "h-[280px]"
+      }`}
     >
-      <div className='flex items-center gap-4 mb-4'>
+      {/* Header - Fixed height */}
+      <div className='flex items-center gap-4 h-[60px]'>
         <Image
           src={image}
           alt={client}
@@ -41,12 +58,12 @@ export default function TestimonialCard({
           height={50}
           className='rounded-full'
         />
-        <div className='flex justify-between w-full gap-2'>
+        <div className='flex flex-col items-start justify-between gap-2 w-full'>
           <div>
-            <h4 className='font-semibold'>{client}</h4>
+            <h4 className='font-semibold text-sm'>{client}</h4>
             <p className='text-sm text-primary-grayText'>{author}</p>
           </div>
-          <div className='flex gap-1 items-center justify-end'>
+          <div className='flex gap-1 items-center justify-center'>
             {[...Array(5)].map((_, index) => (
               <svg
                 key={index}
@@ -60,38 +77,49 @@ export default function TestimonialCard({
           </div>
         </div>
       </div>
-      <div className='flex-1 flex flex-col'>
+
+      {/* Content area */}
+      <div className={`relative ${isExpanded ? "h-auto" : "h-[180px]"}`}>
         <div
-          className={`relative ${
-            !isExpanded ? "h-[150px]" : "h-auto"
+          className={`${
+            isExpanded ? "h-auto" : "h-[140px]"
           } overflow-hidden transition-all duration-300`}
         >
-          <p
+          {/* <p
             ref={contentRef}
-            className='text-primary-grayText text-base leading-relaxed'
+            className='text-primary-grayText text-sm leading-relaxed'
           >
             {testimonial}
-          </p>
-          {!isExpanded && shouldShowButton && (
-            <div className='absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#000000] to-transparent' />
-          )}
+          </p> */}
+          <div
+            ref={contentRef}
+            className=' text-sm leading-relaxed mt-3 md:mt-2'
+            dangerouslySetInnerHTML={{ __html: testimonial }}
+          />
         </div>
-        {shouldShowButton && (
-          <Button
-            onClick={() => setIsExpanded(!isExpanded)}
-            variant='link'
-            className='text-primary-color hover:text-primary-color/80 flex items-center gap-1 px-0 mt-2'
-          >
-            {isExpanded ? (
-              <>
-                Hide <ChevronUp className='w-4 h-4' />
-              </>
-            ) : (
-              <>
-                See More <ChevronDown className='w-4 h-4' />
-              </>
+
+        {/* Button area - Only show if content overflows */}
+        {hasOverflow && (
+          <div className='h-[40px] flex items-center'>
+            {!isExpanded && (
+              <div className='absolute bottom-[40px] left-0 right-0 h-12 bg-gradient-to-t from-[#000000] to-transparent' />
             )}
-          </Button>
+            <Button
+              onClick={() => setIsExpanded(!isExpanded)}
+              variant='link'
+              className='text-primary-color hover:text-primary-color/80 flex items-center gap-1 px-0'
+            >
+              {isExpanded ? (
+                <>
+                  Hide <ChevronUp className='w-4 h-4' />
+                </>
+              ) : (
+                <>
+                  See More <ChevronDown className='w-4 h-4' />
+                </>
+              )}
+            </Button>
+          </div>
         )}
       </div>
     </div>
