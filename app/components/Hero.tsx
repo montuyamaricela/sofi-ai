@@ -65,53 +65,53 @@ export default function Hero() {
 
   return (
     <Container className='flex items-center lg:h-[85vh]' id='hero'>
-      <motion.div initial='offscreen' whileInView='onscreen'>
-        <div className='grid gap-10 md:gap-5 lg:gap-0 md:grid-cols-2 items-center'>
-          <div className='space-y-5 lg:space-y-8'>
-            <motion.div variants={animationVariant("y", -20)}>
-              <div className='flex items-center gap-1 text-primary-color'>
-                <MessageCircle className='w-8 h-8' fill='currentColor' />
-                <TypewriterEffect
-                  key={key}
-                  words={[greetings[currentGreetingIndex]]}
-                />
-              </div>
-            </motion.div>
-            <motion.div variants={animationVariant("x", -20)}>
-              <h1 className='text-4xl xl:text-5xl font-bold'>
-                Unlock the{" "}
-                <span className='text-primary-color'>Full Potential</span> of AI
-                for Your Brand
-              </h1>
-            </motion.div>
-            <motion.div variants={animationVariant("y", 20)}>
-              {" "}
-              <p className=' text-primary-grayText'>
-                Revolutionize your brand&apos;s customer experience with
-                intelligent, AI-powered automation. Boost efficiency, enhance
-                customer engagement, and scale effortlessly with SOFI AI.
-              </p>{" "}
-            </motion.div>
-
-            <motion.div variants={animationVariant("x", 20)}>
-              <div className='flex gap-5 items-center'>
-                <Button className='border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
-                  Book Now
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-          <motion.div variants={animationVariant("x", 20)}>
-            <div className='relative'>
-              <Image
-                src={phoneImage}
-                alt='phone image'
-                className='mx-auto w-96 md:w-full xl:w-3/5'
+      {/* <motion.div initial='offscreen' whileInView='onscreen'> */}
+      <div className='grid gap-10 md:gap-5 lg:gap-0 md:grid-cols-2 items-center'>
+        <div className='space-y-5 lg:space-y-8'>
+          <motion.div variants={animationVariant("y", -20)}>
+            <div className='flex items-center gap-1 text-primary-color'>
+              <MessageCircle className='w-8 h-8' fill='currentColor' />
+              <TypewriterEffect
+                key={key}
+                words={[greetings[currentGreetingIndex]]}
               />
             </div>
           </motion.div>
+          <motion.div variants={animationVariant("x", -20)}>
+            <h1 className='text-4xl xl:text-5xl font-bold'>
+              Unlock the{" "}
+              <span className='text-primary-color'>Full Potential</span> of AI
+              for Your Brand
+            </h1>
+          </motion.div>
+          <motion.div variants={animationVariant("y", 20)}>
+            {" "}
+            <p className=' text-primary-grayText'>
+              Revolutionize your brand&apos;s customer experience with
+              intelligent, AI-powered automation. Boost efficiency, enhance
+              customer engagement, and scale effortlessly with SOFI AI.
+            </p>{" "}
+          </motion.div>
+
+          <motion.div variants={animationVariant("x", 20)}>
+            <div className='flex gap-5 items-center'>
+              <Button className='border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
+                Book Now
+              </Button>
+            </div>
+          </motion.div>
         </div>
-      </motion.div>
+        <motion.div variants={animationVariant("x", 20)}>
+          <div className='relative'>
+            <Image
+              src={phoneImage}
+              alt='phone image'
+              className='mx-auto w-96 md:w-full xl:w-3/5'
+            />
+          </div>
+        </motion.div>
+      </div>
+      {/* </motion.div> */}
     </Container>
   );
 }
