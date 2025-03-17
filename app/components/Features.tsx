@@ -1,18 +1,34 @@
-"use client";
-import React, { useState } from "react";
-import { Container } from "./common/Container";
-import { features } from "../data";
-import { motion } from "framer-motion";
-import { animationVariant } from "@/utils/animation";
+'use client';
+import React, { useState } from 'react';
+import { Container } from './common/Container';
+import { features } from '../data';
+import { motion } from 'framer-motion';
+import { animationVariant } from '@/utils/animation';
+import useViewportWidth from '@/lib/useViewportWidth';
 
 export default function Features() {
   const [showAll, setShowAll] = useState(false);
-  const displayedFeatures = showAll ? features : features.slice(0, 6);
+  const viewportWidth = useViewportWidth();
+
+  // Default to desktop view during SSR (when viewportWidth is null)
+  const isMobile = viewportWidth !== null ? viewportWidth < 768 : false;
+
+  const displayedFeatures = showAll
+    ? features
+    : features.slice(0, isMobile ? 3 : 6);
+
+  const shouldShowOverlay = (index: number) => {
+    if (showAll) return false;
+    if (isMobile) {
+      return index === 2; // Only show overlay on the third item on mobile
+    }
+    return index >= 3; // Desktop behavior remains the same
+  };
 
   return (
     <Container id='features'>
       {/* <motion.div initial='offscreen' whileInView='onscreen' className='w-full'> */}
-      <motion.div variants={animationVariant("y", -20)}>
+      <motion.div variants={animationVariant('y', -20)}>
         <p className='text-primary-color tracking-widest uppercase text-center'>
           Our Service
         </p>
@@ -22,7 +38,7 @@ export default function Features() {
       </motion.div>
 
       <div className='relative'>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto]'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto px-4 md:px-0'>
           {displayedFeatures.map((item, index) => (
             <motion.div
               layout
@@ -31,28 +47,28 @@ export default function Features() {
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3 }}
               key={item.id}
-              className={`bg-white/10 p-10 rounded-md transition-all duration-300 relative ${
+              className={`bg-white/10 p-6 md:p-10 rounded-md transition-all duration-300 relative ${
                 showAll || index < 3
-                  ? "hover:border-primary-color/50 hover:shadow-xl hover:shadow-primary-color/20"
-                  : ""
+                  ? 'hover:border-primary-color/50 hover:shadow-xl hover:shadow-primary-color/20'
+                  : ''
               }`}
             >
               <div className='flex flex-col h-full'>
-                <p className='text-primary-color text-2xl font-bold mb-5'>
+                <p className='text-xl md:text-2xl font-bold mb-3 md:mb-5 text-primary-color'>
                   {item.title}
                 </p>
                 <div
-                  className='flex-grow'
+                  className='flex-grow text-sm md:text-base'
                   dangerouslySetInnerHTML={{ __html: item.description }}
                 />
-                <div className='mt-5'>
-                  <p className='text-primary-grayText/40 font-bold text-lg'>
+                <div className='mt-3 md:mt-5'>
+                  <p className='text-primary-grayText/40 font-bold text-base md:text-lg'>
                     {item.id}
                   </p>
                 </div>
               </div>
 
-              {!showAll && index >= 3 && (
+              {shouldShowOverlay(index) && (
                 <div className='absolute inset-0 bg-gradient-to-b from-transparent from-10% via-black/50 via-30% to-black/90 pointer-events-none rounded-md'></div>
               )}
             </motion.div>
@@ -66,14 +82,14 @@ export default function Features() {
 
       {features.length > 6 && (
         <motion.div
-          variants={animationVariant("y", 20)}
+          variants={animationVariant('y', 20)}
           className='flex justify-center mt-8'
         >
           <button
             onClick={() => setShowAll(!showAll)}
             className='bg-primary-color/20 hover:bg-primary-color/30 text-primary-color px-6 py-3 rounded-md transition-all duration-300'
           >
-            {showAll ? "Show Less" : "Show More"}
+            {showAll ? 'Show Less' : 'Show More'}
           </button>
         </motion.div>
       )}

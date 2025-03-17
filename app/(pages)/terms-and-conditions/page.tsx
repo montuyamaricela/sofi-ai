@@ -1,10 +1,16 @@
-import React from "react";
+// import { Metadata } from 'next';
+import React from 'react';
+
+// export const metadata: Metadata = {
+//   title: 'Terms and Conditions | SOFI AI',
+//   description: 'Terms and Conditions of SOFI AI',
+// };
 
 export default function TermsAndConditions() {
   return (
     <div className='min-h-screen bg-black text-white'>
-      <div className='container mx-auto px-8 py-16'>
-        <h1 className='text-2xl md:text-4xl font-bold text-center mb-10 lg:mb-16'>
+      <div className='container mx-auto px-8 py-5 lg:py-16'>
+        <h1 className='text-2xl md:text-4xl font-bold text-center mb-5 lg:mb-10'>
           Terms and Conditions
         </h1>
 
@@ -25,7 +31,6 @@ export default function TermsAndConditions() {
               INC platform.
             </p>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Website Terms
@@ -54,7 +59,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               General Conditions
@@ -85,7 +89,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Accuracy, Completeness and Timeliness of Information
@@ -110,7 +113,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Modifications to the Service and Prices
@@ -131,7 +133,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Products or Services
@@ -156,7 +157,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Accuracy of Billing and Account Information
@@ -184,8 +184,8 @@ export default function TermsAndConditions() {
                 contact you as needed.
               </p>
             </div>
-          </section>xl
-
+          </section>
+          xl
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Third-Party Tools
@@ -213,7 +213,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Third-Party Links
@@ -241,7 +240,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               User Comments, Feedback and Other Submissions
@@ -285,7 +283,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Errors, Inaccuracies and Omissions
@@ -313,7 +310,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Prohibited Uses
@@ -355,7 +351,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Disclaimer of Warranties; Limitation of Liability
@@ -409,7 +404,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Indemnification
@@ -428,7 +422,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Severability
@@ -445,7 +438,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Termination
@@ -472,7 +464,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Entire Agreement
@@ -498,7 +489,6 @@ export default function TermsAndConditions() {
               </p>
             </div>
           </section>
-
           <section>
             <h2 className='text-2xl font-semibold text-primary-color mb-4'>
               Contact Information

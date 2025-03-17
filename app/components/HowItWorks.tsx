@@ -1,10 +1,10 @@
-"use client";
-import React from "react";
-import { Container } from "./common/Container";
-import { howItWorks } from "../data";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { animationVariant } from "@/utils/animation";
+'use client';
+import React from 'react';
+import { Container } from './common/Container';
+import { howItWorks } from '../data';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { animationVariant } from '@/utils/animation';
 export default function HowItWorks() {
   return (
     <Container
@@ -15,10 +15,10 @@ export default function HowItWorks() {
       <div className='max-w-7xl mx-auto relative z-10'>
         <div className='absolute inset-0 -z-10'>
           <div className='absolute top-20 left-10 w-96 h-96 bg-primary-color/20 rounded-full blur-[120px]'></div>
-          <div className='absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px]'></div>
+          <div className='absolute bottom-20 right-10 w-96 h-96 bg-primary-color/20 rounded-full blur-[120px]'></div>
         </div>
         <div className='mb-10 lg:mb-12'>
-          <motion.div variants={animationVariant("x", -20)}>
+          <motion.div variants={animationVariant('x', -20)}>
             <p className='text-primary-color uppercase tracking-widest'>
               HOW IT WORKS
             </p>
@@ -27,7 +27,7 @@ export default function HowItWorks() {
               <span className='text-primary-color'>ONBOARDING PROCESS</span>
             </h2>
           </motion.div>
-          <motion.div variants={animationVariant("y", 20)}>
+          <motion.div variants={animationVariant('y', 20)}>
             <Link
               href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09J3y1Vn26ezSqOVH8zuujqHnA43Ks41SmISgRGjFvTo3TqiMezwT0hrp2FpF3uX8OSdxGVHhQ'
               target='_blank'
@@ -40,7 +40,7 @@ export default function HowItWorks() {
           </motion.div>
         </div>
 
-        <motion.div variants={animationVariant("y", 20)}>
+        <motion.div variants={animationVariant('y', 20)}>
           <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-8'>
             {howItWorks.map((item) => (
               <div
@@ -49,7 +49,7 @@ export default function HowItWorks() {
               >
                 <div className='mb-4'>
                   <span className='bg-primary-color/30 text-white px-4 py-1 rounded-full text-sm'>
-                    Step {String(item.step).padStart(2, "0")}
+                    Step {String(item.step).padStart(2, '0')}
                   </span>
                 </div>
                 <h3 className='text-white text-2xl font-bold mb-4'>
