@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Container } from "./common/Container";
-import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
-import { integrations } from "../data";
-import logo from "@/public/images/logo/logo-white.png";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { animationVariant } from "@/utils/animation";
+import React from 'react';
+import { Container } from './common/Container';
+import { InfiniteMovingCards } from './ui/infinite-moving-cards';
+import { integrations } from '../data';
+import logo from '@/public/images/logo/logo-white.png';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { animationVariant } from '@/utils/animation';
 
 export default function Integration() {
   // Randomize integrations using Fisher-Yates shuffle algorithm
@@ -23,22 +23,22 @@ export default function Integration() {
   const randomizedIntegrations = randomizeArray(integrations);
 
   return (
-    <Container id='integrations'>
+    <Container id='integrations' className='overflow-hidden'>
       {/* <motion.div initial='offscreen' whileInView='onscreen' className='w-full'> */}
-      <div className='text-center mb-5 lg:mb-10 overflow-hidden'>
-        <motion.div variants={animationVariant("x", -20)}>
+      <div className='text-center mb-5 lg:mb-10 overflow-hidden mx-auto'>
+        <motion.div variants={animationVariant('x', -20)}>
           <h2 className='text-sm text-primary-color uppercase tracking-wide mb-3'>
             Integrations
           </h2>
         </motion.div>
-        <motion.div variants={animationVariant("x", 20)}>
+        <motion.div variants={animationVariant('x', 20)}>
           <h3 className='text-4xl md:text-5xl font-bold mb-6'>
-            Connect SOFI AI with the <br />{" "}
+            Connect SOFI AI with the <br />{' '}
             <span className='text-primary-color'>your everyday tasks</span>
           </h3>
         </motion.div>
       </div>
-      <motion.div variants={animationVariant("y", 20)}>
+      <motion.div variants={animationVariant('y', 20)}>
         <div className='relative w-full overflow-hidden flex flex-col items-center justify-center'>
           <div className='absolute mx-auto w-40 h-40 lg:w-80 lg:h-80 rounded-full flex items-center justify-center bg-black border-white/30  border z-40 animate-[spin-clockwise_20s_linear_infinite]'>
             <Image
