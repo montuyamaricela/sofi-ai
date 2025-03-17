@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
-import { socialLinks, legalLinks } from "@/app/data";
-import logo from "@/public/images/logo/logo-with-name.png";
+import Link from 'next/link';
+import Image from 'next/image';
+import { socialLinks, legalLinks } from '@/app/data';
+import logo from '@/public/images/logo/logo-with-name.png';
 export default function Footer() {
   return (
     <footer className='bg-secondary-lightGray'>
@@ -14,11 +14,11 @@ export default function Footer() {
               <Image
                 src={logo}
                 alt='SOFI AI Logo'
-                className='h-14 md:h-20 w-auto'
+                className='h-14 md:h-20 w-auto mx-auto lg:mx-0'
               />
             </Link>
-            <div className='flex flex-col md:flex-row lg:items-center lg:gap-4 lg:justify-between'>
-              <p className='text-sm md:text-base mt-3 md:w-2/4 text-white/60'>
+            <div className='flex flex-col lg:flex-row items-center lg:gap-4 lg:justify-between'>
+              <p className='text-sm md:text-base mt-3 md:w-2/4 text-white/60 text-center lg:text-left'>
                 Empowering businesses with AI-driven solutions to enhance
                 efficiency, streamline operations, and revolutionize customer
                 interactions. Experience the future of intelligent automation
@@ -50,10 +50,10 @@ export default function Footer() {
           {/* Bottom Section */}
           <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
             <p className='text-gray-400 text-sm'>
-              © 2025{" "}
+              © 2025{' '}
               <span className='text-primary-color'>
                 SOFI AI Tech Solution Inc.
-              </span>{" "}
+              </span>{' '}
               All rights reserved.
             </p>
 
