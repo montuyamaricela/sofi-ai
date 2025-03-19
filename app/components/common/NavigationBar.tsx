@@ -8,6 +8,7 @@ import { Button } from '../ui/button';
 
 import { Menu } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { useInView } from 'react-intersection-observer';
 
 export default function NavigationBar() {
   const pathname = usePathname();
@@ -15,6 +16,7 @@ export default function NavigationBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -34,10 +36,13 @@ export default function NavigationBar() {
   useEffect(() => {
     if (pathname === '/about') {
       setActiveLink('/#about');
+    } else if (activeSection) {
+      setActiveLink(activeSection);
+      console.log('activeSection', activeSection);
     } else {
       setActiveLink(pathname.toLowerCase());
     }
-  }, [pathname]);
+  }, [pathname, activeSection]);
 
   const handleCloseMenu = () => {
     setIsClosing(true);
@@ -45,6 +50,26 @@ export default function NavigationBar() {
       setIsMenuOpen(false);
       setIsClosing(false);
     }, 300);
+  };
+
+  const useSection = (sectionId: string) => {
+    // remove the / from the sectionId
+    const sectionIdWithoutSlash = sectionId.replace('/', '');
+    // remove the # from the sectionId
+    const sectionIdWithoutHash = sectionIdWithoutSlash.replace('#', '');
+    console.log('sectionIdWithoutHash', sectionIdWithoutHash);
+    const [ref, inView] = useInView({
+      threshold: 0.5,
+    });
+
+    useEffect(() => {
+      if (inView) {
+        console.log('sectionIdWithoutSlash', sectionIdWithoutHash);
+        setActiveSection(sectionIdWithoutHash);
+      }
+    }, [inView, sectionIdWithoutHash]);
+
+    return ref;
   };
 
   return (
@@ -72,12 +97,15 @@ export default function NavigationBar() {
           }`}
         >
           {navigationItems.map((item) => {
+            const sectionRef = useSection(item.href);
+
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => handleLinkClick(item.href)}
-                className={` transition-colors duration-500  font-medium ${
+                ref={item.href.startsWith('#') ? sectionRef : undefined}
+                className={`transition-colors duration-500 font-medium ${
                   activeLink === item.href.toLowerCase()
                     ? 'text-primary-color hover:text-primary-color'
                     : 'text-primary-grayText hover:text-primary-color'
