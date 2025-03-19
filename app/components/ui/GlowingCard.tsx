@@ -97,7 +97,7 @@ const GridItem = ({ area, icon, title, description, id }: GridItemProps) => {
     <li
       className={`min-h-[14rem] list-none ${area} transition-all duration-300`}
     >
-      <div className='relative h-full border-2 bg-[#0f0f0f] border-white/20 p-2 rounded-3xl md:p-3'>
+      <div className='relative h-full border-4 bg-[#090909] border-white/20 p-2 rounded-3xl md:p-3'>
         <GlowingEffect
           spread={40}
           glow={true}

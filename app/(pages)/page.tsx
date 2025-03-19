@@ -8,6 +8,7 @@ import CallToAction from '@/app/components/CallToAction';
 import Integration from '@/app/components/Integration';
 import Testimonial from '@/app/components/Testimonial';
 import { GlowingCard } from '@/app/components/ui/GlowingCard';
+import Features from '../components/Features';
 export default function Home() {
   return (
     <>
@@ -15,7 +16,8 @@ export default function Home() {
       <Video />
       <About />
       <WhyChooseUs />
-      <GlowingCard />
+      <Features />
+      {/* <GlowingCard /> */}
       <HowItWorks />
       <Integration />
       <Testimonial />
