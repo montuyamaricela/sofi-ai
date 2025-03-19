@@ -2,13 +2,14 @@
 'use client';
 import { Container } from './common/Container';
 import { Button } from './ui/button';
-import { Link, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 import phoneImage from '@/public/images/phone-image.png';
 import { TypewriterEffect } from './ui/typewriter';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { animationVariant } from '@/utils/animation';
+import Link from 'next/link';
 
 export default function Hero() {
   const greetings = [
@@ -118,7 +119,9 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
-        <Link href='/#about'>test button</Link>
+        <div>
+          <Link href='/#about'>test button</Link>
+        </div>
       </motion.div>
     </Container>
   );
