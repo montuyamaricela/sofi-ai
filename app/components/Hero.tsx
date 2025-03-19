@@ -2,7 +2,7 @@
 'use client';
 import { Container } from './common/Container';
 import { Button } from './ui/button';
-import { MessageCircle } from 'lucide-react';
+import { Link, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 import phoneImage from '@/public/images/phone-image.png';
 import { TypewriterEffect } from './ui/typewriter';
@@ -118,6 +118,7 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
+        <Link href='/#about'>test button</Link>
       </motion.div>
     </Container>
   );
