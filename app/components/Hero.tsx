@@ -9,36 +9,9 @@ import { TypewriterEffect } from './ui/typewriter';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { animationVariant } from '@/utils/animation';
-import Link from 'next/link';
+import { greetings } from '../data';
 
 export default function Hero() {
-  const greetings = [
-    {
-      text: 'Hello Sissy!',
-      className: 'text-primary-color',
-    },
-    {
-      text: 'Maayong adlaw! Kumusta?',
-      className: 'text-primary-color',
-    },
-    {
-      text: '안녕하세요! 잘 지내세요?',
-      className: 'text-primary-color',
-    },
-    {
-      text: 'こんにちは！お元気ですか？',
-      className: 'text-primary-color',
-    },
-    {
-      text: 'Bonjour ! Comment ça va',
-      className: 'text-primary-color',
-    },
-    {
-      text: 'Mustah knah? 😜',
-      className: 'text-primary-color',
-    },
-  ];
-
   const [currentGreetingIndex, setCurrentGreetingIndex] = useState(0);
   const [key, setKey] = useState(0);
 

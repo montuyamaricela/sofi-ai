@@ -369,3 +369,30 @@ export const achievements = [
   { number: '24/7', label: 'Chat support' },
   { number: '1,000,000+', label: 'Inquiries Handled' },
 ];
+
+export const greetings = [
+  {
+    text: 'Hello Sissy!',
+    className: 'text-primary-color',
+  },
+  {
+    text: 'Maayong adlaw! Kumusta?',
+    className: 'text-primary-color',
+  },
+  {
+    text: '안녕하세요! 잘 지내세요?',
+    className: 'text-primary-color',
+  },
+  {
+    text: 'こんにちは！お元気ですか？',
+    className: 'text-primary-color',
+  },
+  {
+    text: 'Bonjour ! Comment ça va',
+    className: 'text-primary-color',
+  },
+  {
+    text: 'Mustah knah? 😜',
+    className: 'text-primary-color',
+  },
+];
