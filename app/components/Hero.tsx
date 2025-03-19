@@ -119,9 +119,6 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
-        <div>
-          <Link href='/#about'>test button</Link>
-        </div>
       </motion.div>
     </Container>
   );

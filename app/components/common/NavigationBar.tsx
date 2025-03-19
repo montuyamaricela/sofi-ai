@@ -61,7 +61,7 @@ export default function NavigationBar() {
           onClick={() => setActiveLink('/')}
           className='flex items-center'
         >
-          <Image src={logo} alt='logo' className='w-28' />
+          <Image src={logo} alt='logo' className='w-20 sm:w-28' />
         </Link>
 
         <div
@@ -124,7 +124,7 @@ export default function NavigationBar() {
 
                 {/* Menu Content */}
                 <div
-                  className={`fixed top-0 right-0 h-full w-[400px] bg-secondary-darkGray text-white z-50 ${
+                  className={`fixed top-0 right-0 h-full w-[350px] sm:w-[400px] bg-secondary-darkGray text-white z-50 ${
                     isClosing ? 'animate-slide-out' : 'animate-slide-in'
                   }`}
                 >
@@ -135,7 +135,7 @@ export default function NavigationBar() {
                     <div className='flex flex-col border-t border-secondary-border'>
                       {navigationItems.map((item) => (
                         <Link
-                          className='hover:text-primary-color font-medium border-b rounded-none bg-transparent text-primary-grayText py-7 hover:bg-transparent px-6 uppercase text-left cursor-pointer'
+                          className='hover:text-primary-color font-medium border-b rounded-none bg-transparent text-primary-grayText py-5 hover:bg-transparent px-6 uppercase text-left cursor-pointer'
                           key={item.href}
                           href={item.href}
                           onClick={handleCloseMenu}
