@@ -5,23 +5,16 @@ import logo from '@/public/images/logo/logo-with-name.png';
 import Link from 'next/link';
 import { navigationItems } from '@/app/data';
 import { Button } from '../ui/button';
-import {
-  Sheet,
-  SheetClose,
-  // SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetTitle,
-  SheetTrigger,
-} from '../ui/sheet';
+
 import { Menu } from 'lucide-react';
-import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { usePathname } from 'next/navigation';
 
 export default function NavigationBar() {
   const pathname = usePathname();
   const [activeLink, setActiveLink] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +38,14 @@ export default function NavigationBar() {
       setActiveLink(pathname.toLowerCase());
     }
   }, [pathname]);
+
+  const handleCloseMenu = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsMenuOpen(false);
+      setIsClosing(false);
+    }, 300);
+  };
 
   return (
     <div
@@ -103,59 +104,51 @@ export default function NavigationBar() {
         </div>
 
         <div className='lg:hidden'>
-          <Sheet>
-            <VisuallyHidden>
-              <SheetTitle>Menu</SheetTitle>{' '}
-              <SheetDescription>Navigation bar</SheetDescription>
-            </VisuallyHidden>
-            <SheetTrigger asChild className='cursor-pointer'>
+          <div className='relative'>
+            {/* Menu Trigger Button */}
+            <div onClick={() => setIsMenuOpen(true)} className='cursor-pointer'>
               <Menu className='h-6 w-6' />
-            </SheetTrigger>
-            <SheetContent
-              side='right'
-              className='bg-secondary-darkGray text-white'
-            >
-              <div className='flex flex-col gap-4 mt-2'>
-                <Link href='/' className='text-lg p-6'>
-                  <Image src={logo} alt='logo' className='w-28' />
-                </Link>
-                <div className='flex flex-col  border-t border-secondary-border'>
-                  {navigationItems.map((item) => (
-                    <SheetClose key={item.href} asChild>
-                      <a
-                        href={item.href}
-                        className='hover:text-primary-color font-medium border-b  rounded-none bg-transparent  text-primary-grayText py-7 hover:bg-transparent px-6 uppercase text-left'
-                      >
-                        {item.label}
-                      </a>
-                      {/* <Button
-                        key={item.href}
-                        onClick={() => {
-                          const targetId = item.href.replace('/', '');
-                          // First navigate to the page
-                          window.location.href = item.href;
-                          // Then try to scroll after navigation
-                          setTimeout(() => {
-                            const targetElement =
-                              document.getElementById(targetId);
-                            if (targetElement) {
-                              targetElement.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start',
-                              });
-                            }
-                          }, 1000); // Increased timeout to allow for page load
-                        }}
-                        className='hover:text-primary-color font-medium border-b  rounded-none bg-transparent  text-primary-grayText py-7 hover:bg-transparent px-6 uppercase text-left'
-                      >
-                        {item.label}
-                      </Button> */}
-                    </SheetClose>
-                  ))}
+            </div>
+
+            {/* Mobile Menu Overlay */}
+            {isMenuOpen && (
+              <>
+                {/* Backdrop */}
+                <div
+                  className='fixed inset-0 bg-black/50 z-50 transition-opacity duration-300'
+                  onClick={handleCloseMenu}
+                  style={{
+                    opacity: isClosing ? 0 : 1,
+                  }}
+                />
+
+                {/* Menu Content */}
+                <div
+                  className={`fixed top-0 right-0 h-full w-[400px] bg-secondary-darkGray text-white z-50 ${
+                    isClosing ? 'animate-slide-out' : 'animate-slide-in'
+                  }`}
+                >
+                  <div className='flex flex-col gap-4 mt-2'>
+                    <Link href='/' className='text-lg p-6'>
+                      <Image src={logo} alt='logo' className='w-28' />
+                    </Link>
+                    <div className='flex flex-col border-t border-secondary-border'>
+                      {navigationItems.map((item) => (
+                        <Link
+                          className='hover:text-primary-color font-medium border-b rounded-none bg-transparent text-primary-grayText py-7 hover:bg-transparent px-6 uppercase text-left cursor-pointer'
+                          key={item.href}
+                          href={item.href}
+                          onClick={handleCloseMenu}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>
