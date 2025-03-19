@@ -9,7 +9,7 @@ import useViewportWidth from '@/lib/useViewportWidth';
 export default function Features() {
   const [showAll, setShowAll] = useState(false);
   const viewportWidth = useViewportWidth();
-  console.log(features);
+
   // Default to desktop view during SSR (when viewportWidth is null)
   const isMobile = viewportWidth !== null ? viewportWidth < 768 : false;
 

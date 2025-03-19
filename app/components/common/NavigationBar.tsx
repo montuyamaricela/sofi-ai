@@ -129,13 +129,13 @@ export default function NavigationBar() {
                   }`}
                 >
                   <div className='flex flex-col gap-4 mt-2'>
-                    <Link href='/' className='text-lg p-6'>
+                    <Link href='/' className='text-lg px-6 py-3'>
                       <Image src={logo} alt='logo' className='w-28' />
                     </Link>
-                    <div className='flex flex-col border-t border-secondary-border'>
+                    <div className='flex flex-col border-t border-secondary-border/30'>
                       {navigationItems.map((item) => (
                         <Link
-                          className='hover:text-primary-color font-medium border-b rounded-none bg-transparent text-primary-grayText py-5 hover:bg-transparent px-6 uppercase text-left cursor-pointer'
+                          className='hover:text-primary-color font-medium  text-primary-grayText py-5 px-6 uppercase text-left cursor-pointer'
                           key={item.href}
                           href={item.href}
                           onClick={handleCloseMenu}
