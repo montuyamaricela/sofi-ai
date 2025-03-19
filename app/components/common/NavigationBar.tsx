@@ -8,15 +8,15 @@ import { Button } from '../ui/button';
 
 import { Menu } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { useInView } from 'react-intersection-observer';
+import { useSectionObserver } from '@/app/hooks/useSectionObserver';
 
 export default function NavigationBar() {
   const pathname = usePathname();
-  const [activeLink, setActiveLink] = useState('');
+  const [, setActiveLink] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const [currentSection, setCurrentSection] = useState('home');
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -36,13 +36,11 @@ export default function NavigationBar() {
   useEffect(() => {
     if (pathname === '/about') {
       setActiveLink('/#about');
-    } else if (activeSection) {
-      setActiveLink(activeSection);
-      console.log('activeSection', activeSection);
+      setCurrentSection('about-us');
     } else {
       setActiveLink(pathname.toLowerCase());
     }
-  }, [pathname, activeSection]);
+  }, [pathname]);
 
   const handleCloseMenu = () => {
     setIsClosing(true);
@@ -52,32 +50,30 @@ export default function NavigationBar() {
     }, 300);
   };
 
-  const useSection = (sectionId: string) => {
-    // remove the / from the sectionId
-    const sectionIdWithoutSlash = sectionId.replace('/', '');
-    // remove the # from the sectionId
-    const sectionIdWithoutHash = sectionIdWithoutSlash.replace('#', '');
-    console.log('sectionIdWithoutHash', sectionIdWithoutHash);
-    const [ref, inView] = useInView({
-      threshold: 0.5,
-    });
-
-    useEffect(() => {
-      if (inView) {
-        console.log('sectionIdWithoutSlash', sectionIdWithoutHash);
-        setActiveSection(sectionIdWithoutHash);
+  // Use the section observer
+  useSectionObserver((section) => {
+    navigationItems.forEach((item) => {
+      if (item.href.includes(section) && section !== '') {
+        setCurrentSection(item.href.replace(/[/#]/g, ''));
       }
-    }, [inView, sectionIdWithoutHash]);
+      console.log('Section in view:', section);
 
-    return ref;
-  };
+      if (section === 'testimonial') {
+        setCurrentSection('');
+      }
+
+      if (section === '' && item.href.includes(section)) {
+        setCurrentSection('');
+      }
+    });
+  });
 
   return (
     <div
       className={`sticky top-0 z-50 transition-colors duration-500 px-5 ${
         isScrolled
-          ? 'bg-secondary-grayBg border-4 border-secondary-lightGray'
-          : 'bg-black border-4 border-transparent'
+          ? 'border-4 border-secondary-lightGray bg-secondary-grayBg'
+          : 'border-4 border-transparent'
       }`}
     >
       <div className='flex justify-between items-center container mx-auto py-5 md:py-6 font-poppins'>
@@ -97,16 +93,15 @@ export default function NavigationBar() {
           }`}
         >
           {navigationItems.map((item) => {
-            const sectionRef = useSection(item.href);
-
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => handleLinkClick(item.href)}
-                ref={item.href.startsWith('#') ? sectionRef : undefined}
                 className={`transition-colors duration-500 font-medium ${
-                  activeLink === item.href.toLowerCase()
+                  (currentSection === item.href.replace(/[/#]/g, '') &&
+                    pathname !== '/about') ||
+                  (pathname === '/about' && item.href === '/#about')
                     ? 'text-primary-color hover:text-primary-color'
                     : 'text-primary-grayText hover:text-primary-color'
                 }`}

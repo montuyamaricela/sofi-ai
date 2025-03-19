@@ -53,13 +53,6 @@ export default function Testimonial() {
             breakpoints={{
               320: {
                 slidesPerView: 1,
-                // spaceBetween: 20,
-                // navigation: {
-                //   enabled: false,
-                // },
-                // pagination: {
-                //   enabled: false, // Disable pagination on small screens
-                // },
               },
               768: {
                 slidesPerView: 2,
