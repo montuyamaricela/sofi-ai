@@ -38,9 +38,9 @@ export default function Hero() {
   }, [currentGreetingIndex, greetings]);
 
   return (
-    <Container className='flex items-center lg:h-[85vh]' id='hero'>
+    <Container className='flex items-center lg:h-[85vh] ' id='hero'>
       <motion.div initial='offscreen' whileInView='onscreen'>
-        <div className='flex flex-col lg:flex-row items-center gap-10 lg:gap-20'>
+        <div className='flex flex-col lg:flex-row items-center gap-10 lg:gap-20 max-w-7xl mx-auto'>
           <div className='space-y-5 lg:space-y-8'>
             <motion.div variants={animationVariant('y', -20)}>
               <div className='flex items-center gap-1 text-primary-color'>
