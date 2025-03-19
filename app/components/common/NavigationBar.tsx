@@ -54,7 +54,7 @@ export default function NavigationBar() {
           : 'bg-black border-4 border-transparent'
       }`}
     >
-      <div className='flex justify-between items-center container mx-auto py-6 font-poppins'>
+      <div className='flex justify-between items-center container mx-auto py-5 md:py-6 font-poppins'>
         <Link
           href='/'
           onClick={() => setActiveLink('/')}
@@ -122,7 +122,13 @@ export default function NavigationBar() {
                 <div className='flex flex-col  border-t border-secondary-border'>
                   {navigationItems.map((item) => (
                     <SheetClose key={item.href} asChild>
-                      <Button
+                      <a
+                        href={item.href}
+                        className='hover:text-primary-color font-medium border-b  rounded-none bg-transparent  text-primary-grayText py-7 hover:bg-transparent px-6 uppercase text-left'
+                      >
+                        {item.label}
+                      </a>
+                      {/* <Button
                         key={item.href}
                         onClick={() => {
                           const targetId = item.href.replace('/', '');
@@ -143,7 +149,7 @@ export default function NavigationBar() {
                         className='hover:text-primary-color font-medium border-b  rounded-none bg-transparent  text-primary-grayText py-7 hover:bg-transparent px-6 uppercase text-left'
                       >
                         {item.label}
-                      </Button>
+                      </Button> */}
                     </SheetClose>
                   ))}
                 </div>
