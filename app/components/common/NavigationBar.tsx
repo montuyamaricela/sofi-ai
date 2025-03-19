@@ -7,6 +7,7 @@ import { navigationItems } from '@/app/data';
 import { Button } from '../ui/button';
 import {
   Sheet,
+  SheetClose,
   // SheetClose,
   SheetContent,
   SheetDescription,
@@ -34,7 +35,6 @@ export default function NavigationBar() {
   }, []);
 
   const handleLinkClick = (href: string) => {
-    console.log(href);
     setActiveLink(href.toLowerCase());
   };
 
@@ -121,15 +121,30 @@ export default function NavigationBar() {
                 </Link>
                 <div className='flex flex-col  border-t border-secondary-border'>
                   {navigationItems.map((item) => (
-                    // <SheetClose asChild key={item.href}>
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className='hover:text-primary-color font-medium border-b text-primary-grayText border-secondary-border py-4 px-6 uppercase  '
-                    >
-                      {item.label}
-                    </Link>
-                    // </SheetClose>
+                    <SheetClose key={item.href} asChild>
+                      <Button
+                        key={item.href}
+                        onClick={() => {
+                          const targetId = item.href.replace('/', '');
+                          // First navigate to the page
+                          window.location.href = item.href;
+                          // Then try to scroll after navigation
+                          setTimeout(() => {
+                            const targetElement =
+                              document.getElementById(targetId);
+                            if (targetElement) {
+                              targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start',
+                              });
+                            }
+                          }, 1000); // Increased timeout to allow for page load
+                        }}
+                        className='hover:text-primary-color font-medium border-b  rounded-none bg-transparent  text-primary-grayText py-7 hover:bg-transparent px-6 uppercase text-left'
+                      >
+                        {item.label}
+                      </Button>
+                    </SheetClose>
                   ))}
                 </div>
               </div>
