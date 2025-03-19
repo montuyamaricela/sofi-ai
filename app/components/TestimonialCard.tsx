@@ -1,8 +1,8 @@
-"use client";
-import React, { useState, useRef, useEffect } from "react";
-import Image, { StaticImageData } from "next/image";
-import { Button } from "./ui/button";
-import { ChevronUp, ChevronDown } from "lucide-react";
+'use client';
+import React, { useState, useRef, useEffect } from 'react';
+import Image, { StaticImageData } from 'next/image';
+import { Button } from './ui/button';
+import { ChevronUp, ChevronDown } from 'lucide-react';
 
 interface TestimonialCardProps {
   client: string;
@@ -33,20 +33,20 @@ export default function TestimonialCard({
     // Check on mount and when content changes
     checkOverflow();
     // Also check after images load and fonts render
-    window.addEventListener("load", checkOverflow);
+    window.addEventListener('load', checkOverflow);
     // Check on window resize
-    window.addEventListener("resize", checkOverflow);
+    window.addEventListener('resize', checkOverflow);
 
     return () => {
-      window.removeEventListener("load", checkOverflow);
-      window.removeEventListener("resize", checkOverflow);
+      window.removeEventListener('load', checkOverflow);
+      window.removeEventListener('resize', checkOverflow);
     };
   }, [testimonial]);
 
   return (
     <div
       className={`bg-white/5 p-6 rounded-lg border border-white/10 hover:border-primary-color/50 transition-all duration-300 ${
-        isExpanded ? "h-auto" : "h-[280px]"
+        isExpanded ? 'h-auto' : 'h-[280px]'
       }`}
     >
       {/* Header - Fixed height */}
@@ -79,18 +79,17 @@ export default function TestimonialCard({
       </div>
 
       {/* Content area */}
-      <div className={`relative ${isExpanded ? "h-auto" : "h-[180px]"}`}>
+      <div
+        className={`relative overflow-hidden
+          data-[state=closed]:animate-accordion-up 
+          data-[state=open]:animate-accordion-down`}
+        data-state={isExpanded ? 'open' : 'closed'}
+      >
         <div
           className={`${
-            isExpanded ? "h-auto" : "h-[140px]"
+            isExpanded ? 'h-auto' : 'h-[140px]'
           } overflow-hidden transition-all duration-300`}
         >
-          {/* <p
-            ref={contentRef}
-            className='text-primary-grayText text-sm leading-relaxed'
-          >
-            {testimonial}
-          </p> */}
           <div
             ref={contentRef}
             className=' text-sm leading-relaxed mt-3 md:mt-2'

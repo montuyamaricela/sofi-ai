@@ -38,9 +38,9 @@ export default function Hero() {
   }, [currentGreetingIndex, greetings]);
 
   return (
-    <Container className='flex items-center lg:h-[85vh]' id='hero'>
+    <Container className='flex items-center lg:h-[85vh] ' id='hero'>
       <motion.div initial='offscreen' whileInView='onscreen'>
-        <div className='grid gap-10 md:gap-5 lg:gap-0 md:grid-cols-2 items-center'>
+        <div className='flex flex-col lg:flex-row items-center gap-10 lg:gap-20 max-w-7xl mx-auto'>
           <div className='space-y-5 lg:space-y-8'>
             <motion.div variants={animationVariant('y', -20)}>
               <div className='flex items-center gap-1 text-primary-color'>
@@ -53,9 +53,6 @@ export default function Hero() {
             </motion.div>
             <motion.div variants={animationVariant('x', -20)}>
               <h1 className='text-4xl xl:text-5xl font-bold capitalize'>
-                {/* Unlock the{" "}
-              <span className='text-primary-color'>Full Potential</span> of AI
-              for Your Brand */}
                 Unlock your{' '}
                 <span className='text-primary-color'>
                   brand&apos;s full potential
@@ -65,9 +62,6 @@ export default function Hero() {
             </motion.div>
             <motion.div variants={animationVariant('y', 20)}>
               <p className=' text-primary-grayText'>
-                {/* Revolutionize your brand&apos;s customer experience with
-              intelligent, AI-powered automation. Boost efficiency, enhance
-              customer engagement, and scale effortlessly with SOFI AI. */}
                 Scale the way you engage your customers with intuitive,
                 AI-enabled automation. Increase your online sales efficiency,
                 enhance your customer experience, and effortlessly sell more.
@@ -83,11 +77,11 @@ export default function Hero() {
             </motion.div>
           </div>
           <motion.div variants={animationVariant('x', 20)}>
-            <div className='relative'>
+            <div className='relative lg:w-[450px]'>
               <Image
                 src={phoneImage}
                 alt='phone image'
-                className='mx-auto w-96 md:w-full xl:w-3/5'
+                className='ml-auto w-96 md:w-full'
               />
             </div>
           </motion.div>

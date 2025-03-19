@@ -17,7 +17,7 @@ export default function About() {
           whileInView='onscreen'
           className='w-full'
         >
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-10 items-center'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-10 items-center max-w-7xl mx-auto'>
             <motion.div variants={animationVariant('x', -20)}>
               <div className='relative'>
                 <Image src={aboutImage} alt='placeholder' className='mx-auto' />
