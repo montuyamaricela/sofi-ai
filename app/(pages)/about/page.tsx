@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { animationVariant } from '@/utils/animation';
 export default function AboutPage() {
   return (
-    <main className=''>
+    <main id='about-us'>
       <Container>
         <motion.div
           initial='offscreen'

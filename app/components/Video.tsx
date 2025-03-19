@@ -7,7 +7,7 @@ import { animationVariant, halfFlipAnimation } from '@/utils/animation';
 export default function Video() {
   return (
     <div className='relative'>
-      <div className='absolute top-0 left-0 right-0 h-20 z-10 bg-gradient-to-b from-black to-secondary-grayBg pointer-events-none'></div>
+      <div className='absolute top-0 left-0 right-0 h-20 z-10 bg-gradient-to-b from-transparent to-secondary-grayBg pointer-events-none'></div>
 
       <Container className='bg-secondary-grayBg'>
         <motion.div
