@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Bottom Section */}
           <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
-            <p className='text-gray-400 text-sm'>
+            <p className='text-gray-400 text-sm text-center md:text-left'>
               © 2025{' '}
               <span className='text-primary-color'>
                 SOFI AI Tech Solution Inc.
