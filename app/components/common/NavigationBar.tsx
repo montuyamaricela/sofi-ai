@@ -77,8 +77,6 @@ export default function NavigationBar() {
     if (chatbotButton) {
       chatbotButton.click();
     }
-
-    console.log(chatbotButton);
   };
 
   return (
