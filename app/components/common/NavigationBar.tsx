@@ -53,7 +53,7 @@ export default function NavigationBar() {
   // Use the section observer
   useSectionObserver((section) => {
     let foundMatch = false;
-
+    console.log(section);
     navigationItems.forEach((item) => {
       if (item.href.includes(section) && section !== '') {
         setCurrentSection(item.href.replace(/[/#]/g, ''));
@@ -61,13 +61,13 @@ export default function NavigationBar() {
       }
     });
 
-    // Only clear currentSection if we're at the very top (home section)
-    if (section === 'home') {
+    // Clear currentSection for home or video sections
+    if (section === 'home' || section === 'video') {
       setCurrentSection('');
     }
 
     // Don't update currentSection if no match found (keeps previous section)
-    if (!foundMatch && section !== 'home') {
+    if (!foundMatch) {
       return;
     }
   });

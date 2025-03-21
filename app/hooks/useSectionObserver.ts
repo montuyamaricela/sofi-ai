@@ -5,7 +5,7 @@ export function useSectionObserver(onSectionChange: (section: string) => void) {
     const sections = document.querySelectorAll('[id]');
     const options = {
       threshold: 0.3,
-      rootMargin: '-80px 0px -50% 0px',
+      // rootMargin: '0px 0px -50% 0px',
     };
 
     const observer = new IntersectionObserver((entries) => {
