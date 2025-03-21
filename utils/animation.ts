@@ -1,9 +1,9 @@
-import { Variants, Target } from "framer-motion";
+import { Variants, Target } from 'framer-motion';
 
 // variant for animation
 
 export const animationVariant = (
-  direction: "x" | "y",
+  direction: 'x' | 'y',
   distance: number,
   rotate?: number,
   duration?: number,
@@ -20,7 +20,7 @@ export const animationVariant = (
     rotate: 0,
     transition: {
       delay: delay ?? 0.1,
-      type: "spring" as const,
+      type: 'spring' as const,
       bounce: 0.4,
       duration: duration ?? 3,
     },
@@ -34,7 +34,7 @@ export const halfFlipAnimation = (delay?: number): Variants => ({
     opacity: 0,
     scale: 0.9,
     transformPerspective: 1000, // Add perspective for better 3D effect
-    transformOrigin: "top", // Flip from top edge
+    transformOrigin: 'top', // Flip from top edge
   } as Target,
   onscreen: {
     rotateX: 0, // Return to normal position
@@ -42,10 +42,10 @@ export const halfFlipAnimation = (delay?: number): Variants => ({
     scale: 1,
     transition: {
       delay: delay ?? 0.1,
-      type: "spring",
+      type: 'spring',
       bounce: 0.3, // Reduced bounce for more controlled animation
       duration: 3, // Faster duration for snappier effect
-      ease: "easeOut",
+      ease: 'easeOut',
     },
   } as Target,
 });
