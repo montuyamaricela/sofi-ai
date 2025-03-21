@@ -31,12 +31,12 @@ export default function Home() {
       <section id='how-it-works'>
         <HowItWorks />
       </section>
-      <section id='integration'>
+      {/* <section id='integration'>
         <Integration />
-      </section>
-      <section id='testimonial'>
+      </section> */}
+      {/* <section id='testimonial'>
         <Testimonial />
-      </section>
+      </section> */}
       <section id='faqs'>
         <FAQs />
       </section>

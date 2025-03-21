@@ -22,7 +22,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
         <SplashScreen finishLoading={() => setIsLoading(false)} />
       ) : (
         <div
-          className={`animate-fadeIn relative ${
+          className={`animate-fadeIn relative overflow-hidden${
             isHome ? 'animate-slideUp' : ''
           }`}
           style={{
