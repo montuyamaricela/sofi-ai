@@ -86,12 +86,12 @@ export default function Chatbot() {
             ktt10.setup({
               id: "MDeRvVkTpHwvnz",
               accountId: "1711681",
-              color: "white",
+              color: "#36D6B5",
               element: '#chat-container',
               type: 'floating',
               hideHeader: true,
               loadMessages: false,
-              icon: '/images/logo/logo.png',
+              icon: '/images/logo/logo-test.png',
             });
           `;
           document.body.appendChild(configScript);
