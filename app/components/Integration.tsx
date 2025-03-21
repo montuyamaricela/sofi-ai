@@ -33,7 +33,7 @@ export default function Integration() {
           </motion.div>
           <motion.div variants={animationVariant('x', 20)}>
             <h3 className='text-4xl md:text-5xl font-bold mb-6'>
-              Connect SOFI AI with the <br />{' '}
+              Connect SOFI AI with <br />{' '}
               <span className='text-primary-color'>your everyday tasks</span>
             </h3>
           </motion.div>

@@ -53,7 +53,6 @@ export default function NavigationBar() {
   // Use the section observer
   useSectionObserver((section) => {
     let foundMatch = false;
-    console.log(section);
     navigationItems.forEach((item) => {
       if (item.href.includes(section) && section !== '') {
         setCurrentSection(item.href.replace(/[/#]/g, ''));
@@ -78,6 +77,8 @@ export default function NavigationBar() {
     if (chatbotButton) {
       chatbotButton.click();
     }
+
+    console.log(chatbotButton);
   };
 
   return (
