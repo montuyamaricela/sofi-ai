@@ -86,7 +86,7 @@ export default function Chatbot() {
             ktt10.setup({
               id: "MDeRvVkTpHwvnz",
               accountId: "1711681",
-              color: "#36D6B5",
+              color: "#29A78D",
               element: '#chat-container',
               type: 'floating',
               hideHeader: true,
