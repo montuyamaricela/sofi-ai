@@ -10,6 +10,7 @@ import {
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import { animationVariant } from '@/utils/animation';
+import Link from 'next/link';
 
 export default function FAQs() {
   return (
@@ -26,9 +27,15 @@ export default function FAQs() {
                 Frequently asked{' '}
                 <span className='text-primary-color'>questions</span>
               </h2>
-              <Button className='mt-5 border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
-                Contact Now
-              </Button>
+              <Link
+                href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09J3y1Vn26ezSqOVH8zuujqHnA43Ks41SmISgRGjFvTo3TqiMezwT0hrp2FpF3uX8OSdxGVHhQ'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <Button className='border-transparent hover:bg-white hover:text-primary-color  border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
+                  Contact Now
+                </Button>
+              </Link>
             </motion.div>
 
             <motion.div variants={animationVariant('x', 20)}>
