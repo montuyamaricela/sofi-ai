@@ -14,12 +14,11 @@ import Link from 'next/link';
 
 export default function FAQs() {
   return (
-    <Container id='faqs' className='overflow-hidden'>
+    <Container id='faqs' className='overflow-hidden relative'>
       <motion.div initial='offscreen' whileInView='onscreen' className='w-full'>
-        <div className='max-w-7xl mx-auto relative z-10'>
-          <div className='absolute inset-0 -z-10'>
-            {/* <div className='absolute top-20 left-10 w-96 h-96 bg-primary-color/20 rounded-full blur-[120px]'></div> */}
-          </div>
+        <div className='max-w-7xl mx-auto'>
+          <div className='absolute top-20 left-10 w-96 h-96 bg-primary-color/20 rounded-full blur-[120px] -z-10'></div>
+          <div className='absolute top-96 right-0 w-96 h-96 bg-primary-color/20 rounded-full  blur-[120px] -z-10 '></div>
 
           <div className='grid lg:grid-cols-2 gap-10 lg:gap-0'>
             <motion.div variants={animationVariant('x', -20)}>
