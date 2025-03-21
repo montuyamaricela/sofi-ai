@@ -42,7 +42,7 @@ export default function Hero() {
       <motion.div initial='offscreen' whileInView='onscreen'>
         <div className='flex flex-col lg:flex-row items-center gap-10 lg:gap-20 max-w-7xl mx-auto'>
           <div className='space-y-5 lg:space-y-8'>
-            <motion.div variants={animationVariant('y', -20)}>
+            <motion.div variants={animationVariant('y', -40)}>
               <div className='flex items-center gap-1 text-primary-color'>
                 <MessageCircle className='w-8 h-8' fill='currentColor' />
                 <TypewriterEffect
@@ -51,7 +51,7 @@ export default function Hero() {
                 />
               </div>
             </motion.div>
-            <motion.div variants={animationVariant('x', -20)}>
+            <motion.div variants={animationVariant('x', -40)}>
               <h1 className='text-4xl xl:text-5xl font-bold capitalize'>
                 Unlock your{' '}
                 <span className='text-primary-color'>
@@ -60,7 +60,7 @@ export default function Hero() {
                 with AI that converts
               </h1>
             </motion.div>
-            <motion.div variants={animationVariant('y', 20)}>
+            <motion.div variants={animationVariant('y', 40)}>
               <p className=' text-primary-grayText'>
                 Scale the way you engage your customers with intuitive,
                 AI-enabled automation. Increase your online sales efficiency,
@@ -68,7 +68,7 @@ export default function Hero() {
               </p>
             </motion.div>
 
-            <motion.div variants={animationVariant('x', 20)}>
+            <motion.div variants={animationVariant('y', 20)}>
               <div className='flex gap-5 items-center'>
                 <Button className='border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
                   Book Now

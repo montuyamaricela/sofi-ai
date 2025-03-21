@@ -52,20 +52,24 @@ export default function NavigationBar() {
 
   // Use the section observer
   useSectionObserver((section) => {
+    let foundMatch = false;
+
     navigationItems.forEach((item) => {
       if (item.href.includes(section) && section !== '') {
         setCurrentSection(item.href.replace(/[/#]/g, ''));
-      }
-      console.log('Section in view:', section);
-
-      if (section === 'testimonial') {
-        setCurrentSection('');
-      }
-
-      if (section === '' && item.href.includes(section)) {
-        setCurrentSection('');
+        foundMatch = true;
       }
     });
+
+    // Only clear currentSection if we're at the very top (home section)
+    if (section === 'home') {
+      setCurrentSection('');
+    }
+
+    // Don't update currentSection if no match found (keeps previous section)
+    if (!foundMatch && section !== 'home') {
+      return;
+    }
   });
 
   return (
