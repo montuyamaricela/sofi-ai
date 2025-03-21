@@ -16,10 +16,10 @@ export default function CallToAction() {
           className='w-full'
         >
           <div className='max-w-7xl mx-auto relative z-10'>
-            <div className='absolute inset-0 z-10'>
+            {/* <div className='absolute inset-0 z-10'>
               <div className='absolute -top-40 -left-20 w-96 h-96 bg-primary-color/20 rounded-full blur-[120px] z-10 '></div>
               <div className='absolute -bottom-40 right-10 w-96 h-96 bg-primary-color/20 rounded-full blur-[120px] z-10 hidden md:block'></div>
-            </div>
+            </div> */}
             <div className='flex flex-col items-center justify-center gap-5 relative'>
               <motion.div variants={animationVariant('y', -20)}>
                 <h2 className='text-white text-4xl lg:text-6xl font-bold text-center'>

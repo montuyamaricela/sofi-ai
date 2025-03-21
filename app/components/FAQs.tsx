@@ -18,7 +18,7 @@ export default function FAQs() {
       <motion.div initial='offscreen' whileInView='onscreen' className='w-full'>
         <div className='max-w-7xl mx-auto relative z-10'>
           <div className='absolute inset-0 -z-10'>
-            <div className='absolute top-20 left-10 w-96 h-96 bg-primary-color/20 rounded-full blur-[120px]'></div>
+            {/* <div className='absolute top-20 left-10 w-96 h-96 bg-primary-color/20 rounded-full blur-[120px]'></div> */}
           </div>
 
           <div className='grid lg:grid-cols-2 gap-10 lg:gap-0'>
@@ -27,15 +27,17 @@ export default function FAQs() {
                 Frequently asked{' '}
                 <span className='text-primary-color'>questions</span>
               </h2>
-              <Link
-                href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09J3y1Vn26ezSqOVH8zuujqHnA43Ks41SmISgRGjFvTo3TqiMezwT0hrp2FpF3uX8OSdxGVHhQ'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <Button className='border-transparent hover:bg-white hover:text-primary-color  border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
-                  Contact Now
-                </Button>
-              </Link>
+              <div className='mt-10'>
+                <Link
+                  href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ09J3y1Vn26ezSqOVH8zuujqHnA43Ks41SmISgRGjFvTo3TqiMezwT0hrp2FpF3uX8OSdxGVHhQ'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <Button className='border-transparent hover:bg-white hover:text-primary-color  border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
+                    Contact Now
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             <motion.div variants={animationVariant('x', 20)}>

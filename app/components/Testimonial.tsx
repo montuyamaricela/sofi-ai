@@ -15,7 +15,7 @@ import { animationVariant } from '@/utils/animation';
 
 export default function Testimonial() {
   return (
-    <Container id='testimonials'>
+    <Container id='testimonials' className='overflow-hidden'>
       <motion.div initial='offscreen' whileInView='onscreen' className='w-full'>
         <div className='text-center mb-5 lg:mb-10'>
           <motion.div variants={animationVariant('x', -20)}>

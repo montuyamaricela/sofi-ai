@@ -6,8 +6,8 @@ import Features from '@/app/components/Features';
 import HowItWorks from '@/app/components/HowItWorks';
 import FAQs from '@/app/components/FAQs';
 import CallToAction from '@/app/components/CallToAction';
-// import Integration from '@/app/components/Integration';
-// import Testimonial from '@/app/components/Testimonial';
+import Integration from '../components/Integration';
+import Testimonial from '../components/Testimonial';
 
 export default function Home() {
   return (
@@ -31,12 +31,12 @@ export default function Home() {
       <section id='how-it-works'>
         <HowItWorks />
       </section>
-      {/* <section id='integration'>
+      <section id='integration'>
         <Integration />
-      </section> */}
-      {/* <section id='testimonial'>
+      </section>
+      <section id='testimonial'>
         <Testimonial />
-      </section> */}
+      </section>
       <section id='faqs'>
         <FAQs />
       </section>
