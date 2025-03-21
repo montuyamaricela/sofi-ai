@@ -89,7 +89,7 @@ export default function Chatbot() {
               color: "#29A78D",
               element: '#chat-container',
               type: 'floating',
-              hideHeader: true,
+              hideHeader: false,
               loadMessages: false,
               icon: '/images/logo/logo-test.png',
             });
