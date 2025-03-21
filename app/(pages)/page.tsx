@@ -26,6 +26,7 @@ export default function Home() {
       </section>
       <section id='features'>
         <Features />
+        {/* <FeatureTest /> */}
       </section>
       <section id='how-it-works'>
         <HowItWorks />

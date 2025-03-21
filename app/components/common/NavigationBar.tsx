@@ -72,6 +72,14 @@ export default function NavigationBar() {
     }
   });
 
+  const handleTryNowClick = () => {
+    // Find and click the chatbot button using the correct class
+    const chatbotButton = document.querySelector('.ktt10-btn') as HTMLElement;
+    if (chatbotButton) {
+      chatbotButton.click();
+    }
+  };
+
   return (
     <div
       className={`sticky top-0 z-50 transition-colors duration-500 px-5 ${
@@ -116,7 +124,10 @@ export default function NavigationBar() {
           })}
         </div>
         <div className='hidden lg:flex gap-5'>
-          <Button className='border-primary-color hover:bg-primary-color hover:text-white border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-medium bg-transparent'>
+          <Button
+            className='border-primary-color hover:bg-primary-color hover:text-white border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-medium bg-transparent'
+            onClick={handleTryNowClick}
+          >
             Try now
           </Button>
           <Link
@@ -124,7 +135,7 @@ export default function NavigationBar() {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <Button className='border-transparent hover:bg-white hover:text-primary-color border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
+            <Button className='border-transparent hover:bg-white hover:text-primary-color  border transition-colors duration-500 text-base px-8 py-6 rounded-sm uppercase font-bold bg-primary-color'>
               Book Now
             </Button>
           </Link>

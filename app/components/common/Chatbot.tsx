@@ -1,46 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// 'use client';
-// import { useEffect } from 'react';
-
-// export default function Chatbot() {
-//   useEffect(() => {
-//     // Create and load the plugin script
-//     const pluginScript = document.createElement('script');
-//     pluginScript.src = 'https://app.sofitech.ai/webchat/plugin.js?v=5';
-//     pluginScript.async = true;
-
-//     pluginScript.onload = () => {
-//       // After the plugin script loads, create and execute the configuration script
-//       const configScript = document.createElement('script');
-//       configScript.textContent = `
-//         window.ktt10 = window.ktt10 || {};
-//         ktt10.setup({
-//           id: "MDeRvVkTpHwvnz",
-//           accountId: "1711681",
-//           color: "#36D6B5",
-//           element: '#chat-container',
-//           type: 'floating',
-//           hideHeader: true,
-//           loadMessages: false,
-//           icon: '/images/logo/logo.png',
-//         });
-//       `;
-//       document.body.appendChild(configScript);
-//     };
-
-//     document.body.appendChild(pluginScript);
-
-//     // Cleanup function to remove scripts if component unmounts
-//     return () => {
-//       if (pluginScript && pluginScript.parentNode) {
-//         pluginScript.parentNode.removeChild(pluginScript);
-//       }
-//     };
-//   }, []); // Empty dependency array ensures this runs once on mount
-
-//   return null; // This component doesn't render anything visible
-// }
-
 'use client';
 
 import { useEffect } from 'react';
@@ -81,7 +39,6 @@ export default function Chatbot() {
           configScript.textContent = `
             // Reset ktt10 to ensure a clean initialization
             window.ktt10 = window.ktt10 || {};
-
             // Initialize the chatbot
             ktt10.setup({
               id: "MDeRvVkTpHwvnz",
