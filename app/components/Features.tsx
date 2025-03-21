@@ -26,7 +26,7 @@ export default function Features() {
   };
 
   return (
-    <Container id='features' className='lg:w-4/5 mx-auto'>
+    <Container id='features' className='lg:w-4/5 mx-auto overflow-hidden'>
       <motion.div initial='offscreen' whileInView='onscreen' className='w-full'>
         <motion.div variants={animationVariant('y', -20)}>
           <p className='text-primary-color tracking-widest uppercase text-center'>

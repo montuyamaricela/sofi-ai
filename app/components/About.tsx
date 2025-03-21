@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import { animationVariant } from '@/utils/animation';
 export default function About() {
   return (
-    <div className='relative'>
+    <div className='relative overflow-hidden'>
       <Container id='about'>
         <motion.div
           initial='offscreen'

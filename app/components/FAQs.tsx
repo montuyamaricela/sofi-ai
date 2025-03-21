@@ -14,7 +14,7 @@ import Link from 'next/link';
 
 export default function FAQs() {
   return (
-    <Container id='faqs'>
+    <Container id='faqs' className='overflow-hidden'>
       <motion.div initial='offscreen' whileInView='onscreen' className='w-full'>
         <div className='max-w-7xl mx-auto relative z-10'>
           <div className='absolute inset-0 -z-10'>

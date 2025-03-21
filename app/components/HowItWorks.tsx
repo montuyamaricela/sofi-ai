@@ -9,7 +9,7 @@ export default function HowItWorks() {
   return (
     <Container
       id='solutions'
-      className='bg-gradient-to-br from-gray-950 via-black to-gray-950'
+      className='bg-gradient-to-br from-gray-950 via-black to-gray-950 overflow-hidden'
     >
       <motion.div initial='offscreen' whileInView='onscreen' className='w-full'>
         <div className='max-w-7xl mx-auto relative z-10'>

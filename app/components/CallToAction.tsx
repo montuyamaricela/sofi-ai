@@ -6,7 +6,7 @@ import { animationVariant } from '@/utils/animation';
 
 export default function CallToAction() {
   return (
-    <div className='relative'>
+    <div className='relative overflow-hidden'>
       {/* Bottom gradient overlay */}
       <div className='absolute top-0 left-0 right-0 h-20 z-10 bg-gradient-to-b from-black pointer-events-none'></div>
       <Container>
